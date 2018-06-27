@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import AppRouter from './routers/AppRouter';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        React 16.4
+      <div className="container">
+        <AppRouter />
       </div>
     );
   }
