@@ -1,4 +1,5 @@
 import DrawerToggleButton from './DrawerToggleButton';
-import SideDrawer from './SideDrawer';
+import Drawer from './Drawer';
+import Wire from './Wire';
 
-export { DrawerToggleButton, SideDrawer };
+export { DrawerToggleButton, Drawer, Wire };

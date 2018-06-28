@@ -1,7 +1,8 @@
 import Header from './Header';
 import About from './About';
-import NotFound from './NotFound';
 import Portfolio from './Portfolio';
-import { DrawerToggleButton, SideDrawer } from './Drawer';
+import Cv from './Cv';
+import NotFound from './NotFound';
+import { Drawer, DrawerToggleButton, SideDrawer, Wire } from './Drawer';
 
-export { Header, About, Portfolio, NotFound, DrawerToggleButton, SideDrawer };
+export { Header, About, Portfolio, NotFound, Drawer, DrawerToggleButton, SideDrawer, Wire, Cv };
