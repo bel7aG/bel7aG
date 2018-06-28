@@ -7,7 +7,7 @@
     right: 0;
     bottom:0;
     padding: 11% 0 10% 0;
-    background-color: rgba(#000, .03);
+    background-color: rgba(#000, .061);
     color: #969090;
 
     > ul {
@@ -20,31 +20,41 @@
 
       > *:not(:last-child) {
         font-size: 2.5rem;
-        background-color: rgba(#000, .01);
+        // background-color: rgba(#000, .01);
         border-bottom: 1px solid #fff;
         transform: scale(1) skewY(0) skewX(0);
         transition: all .3s;
 
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: linear-gradient(90deg, #8e0e00 , #1f1c18);
+          background-size: 300%;
+          width: 0;
+          height: 100%;
+          z-index: -1;
+          transition: width .58s cubic-bezier(1, 1.9, 0, 1) ;
+          animation: drawerItem 7s linear infinite;
+        }
+
+        &:hover:before {
+          width: 100%;
+        }
+
         &:hover {
           &:first-child {
             transform: scale(1) skewY(0) skewX(-19deg);
-            box-shadow:  2rem -1rem 1.6rem rgba(#000, .23);
           }
           &:nth-child(2) {
             transform: scale(1.06) skewY(0) skewX(0);
-            box-shadow: 0 0 3.1rem rgba(#000, .63);
-            border-bottom: 0;
           }
           &:nth-child(3) {
             transform: scale(1) skewY(0) skewX(19deg);
-            box-shadow: -2rem 1rem 1.6rem rgba(#000, .23);
 
           }
-          animation-name: drawer;
-          animation-fill-mode: forwards;
-          animation-duration: .5s;
 
-          background-color: rgba(#000, .81);
           color: #fff;
           font-size: 3.1rem;
           text-shadow: 0 0 .4rem #fff;

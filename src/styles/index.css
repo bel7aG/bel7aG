@@ -73,6 +73,12 @@ pre, code {
     font-size: 2.9rem;
     letter-spacing: 2px; } }
 
+@keyframes drawerItem {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 300% 0; } }
+
 .header {
   height: 100%; }
   .header .toolbar {
@@ -97,7 +103,7 @@ pre, code {
   right: 0;
   bottom: 0;
   padding: 11% 0 10% 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.061);
   color: #969090; }
   .toolbar__navigation__list-items > ul {
     height: 100%;
@@ -108,28 +114,33 @@ pre, code {
     margin: auto 0; }
     .toolbar__navigation__list-items > ul > *:not(:last-child) {
       font-size: 2.5rem;
-      background-color: rgba(0, 0, 0, 0.01);
       border-bottom: 1px solid #fff;
       transform: scale(1) skewY(0) skewX(0);
       transition: all .3s; }
+      .toolbar__navigation__list-items > ul > *:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #8e0e00, #1f1c18);
+        background-size: 300%;
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        transition: width 0.58s cubic-bezier(1, 1.9, 0, 1);
+        animation: drawerItem 7s linear infinite; }
+      .toolbar__navigation__list-items > ul > *:not(:last-child):hover:before {
+        width: 100%; }
       .toolbar__navigation__list-items > ul > *:not(:last-child):hover {
-        animation-name: drawer;
-        animation-fill-mode: forwards;
-        animation-duration: .5s;
-        background-color: rgba(0, 0, 0, 0.81);
         color: #fff;
         font-size: 3.1rem;
         text-shadow: 0 0 .4rem #fff; }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover:first-child {
-          transform: scale(1) skewY(0) skewX(-19deg);
-          box-shadow: 2rem -1rem 1.6rem rgba(0, 0, 0, 0.23); }
+          transform: scale(1) skewY(0) skewX(-19deg); }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover:nth-child(2) {
-          transform: scale(1.06) skewY(0) skewX(0);
-          box-shadow: 0 0 3.1rem rgba(0, 0, 0, 0.63);
-          border-bottom: 0; }
+          transform: scale(1.06) skewY(0) skewX(0); }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover:nth-child(3) {
-          transform: scale(1) skewY(0) skewX(19deg);
-          box-shadow: -2rem 1rem 1.6rem rgba(0, 0, 0, 0.23); }
+          transform: scale(1) skewY(0) skewX(19deg); }
       .toolbar__navigation__list-items > ul > *:not(:last-child), .toolbar__navigation__list-items > ul > *:not(:last-child) > * {
         display: flex;
         width: 100%;
