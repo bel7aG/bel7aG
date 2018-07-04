@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Header, About, Portfolio, NotFound, Cv } from '../components';
+import { Header, About, Portfolio, Cv, NotFound } from '../components';
 
 class AppRouter extends Component {
   state = {
@@ -23,9 +23,9 @@ class AppRouter extends Component {
             handleDrawerToggleButton={this.handleDrawerToggleButton}
           />
           <Switch>
-            <Route path="/" component={About} />
-            <Route path="/portfolio" component={Portfolio} />
-            <Route path="/cv" component={Cv} />
+            <Route path="/" component={About} exact />
+            <Route path="/portfolio" component={Portfolio} exact />
+            <Route path="/cv" component={Cv} exact />
             <Route component={NotFound} />
           </Switch>
         </React.Fragment>

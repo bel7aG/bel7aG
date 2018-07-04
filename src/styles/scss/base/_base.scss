@@ -15,8 +15,6 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
-  background-color: #ffffff;
-  font-size: 1.5rem;
 }
 
 body, .container, #root {
@@ -26,7 +24,7 @@ body, .container, #root {
 * {
   padding: 0;
   margin: 0;
-  user-select: none;  
+  // user-select: none;
 }
 
 *, *::before, *::after {

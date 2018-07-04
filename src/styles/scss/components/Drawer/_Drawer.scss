@@ -1,94 +1,92 @@
-.toolbar__navigation {
-  &__list-items {
-    z-index: 11;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom:0;
-    padding: 11% 0 10% 0;
-    background-color: rgba(#000, .061);
-    color: #969090;
+.toolbar {
+  &__navigation {
+    transition: all .3s;
+    z-index: 10;
+    &__list-items {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 11% 0 10% 0;
+      background-color: rgba(#F00, .861);
+      color: #969090;
 
-    > ul {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 10%;
-      margin: auto 0;
+      > ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10%;
+        margin: auto 0;
 
-      > *:not(:last-child) {
-        font-size: 2.5rem;
-        // background-color: rgba(#000, .01);
-        border-bottom: 1px solid #fff;
-        transform: scale(1) skewY(0) skewX(0);
-        transition: all .3s;
+        > *:not(:last-child) {
+          font-size: 2.5rem;
+          // background-color: rgba(#000, .01);
+          border-bottom: 1px solid #fff;
+          transform: scale(1) skewY(0) skewX(0);
+          transition: all .3s;
 
-        &::before {
-          content: '';
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(90deg, #8e0e00 , #1f1c18);
+            background-size: 300%;
+            width: 0;
+            height: 100%;
+            z-index: -1;
+            transition: width .58s cubic-bezier(1, 1.9, 0, 1) ;
+            animation: drawerItem 7s linear infinite;
+          }
+
+          &:hover:before {
+            width: 100%;
+          }
+
+          &:hover {
+            &:first-child {
+              transform: scale(1) skewY(0) skewX(-19deg);
+            }
+            &:nth-child(2) {
+              transform: scale(1.06) skewY(0) skewX(0);
+            }
+            &:nth-child(3) {
+              transform: scale(1) skewY(0) skewX(19deg);
+
+            }
+
+            color: #fff;
+            font-size: 3.1rem;
+            text-shadow: 0 0 .4rem #fff;
+          }
+
+          & , > * {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+          }
+
+        }
+
+        > *:last-child {
           position: absolute;
-          top: 0;
-          left: 0;
-          background: linear-gradient(90deg, #8e0e00 , #1f1c18);
-          background-size: 300%;
-          width: 0;
-          height: 100%;
-          z-index: -1;
-          transition: width .58s cubic-bezier(1, 1.9, 0, 1) ;
-          animation: drawerItem 7s linear infinite;
-        }
-
-        &:hover:before {
-          width: 100%;
-        }
-
-        &:hover {
-          &:first-child {
-            transform: scale(1) skewY(0) skewX(-19deg);
+          bottom: 5%;
+          left: 50%;
+          transform: translate(-50%, 5%);
+          color: #FFF;
+          text-shadow: 1px 1px 2px #000;
+          font-size: 1.8rem;
+          transition: all .2s;
+          letter-spacing: 1px;
+          &:hover {
+            font-size: 1.9rem;
           }
-          &:nth-child(2) {
-            transform: scale(1.06) skewY(0) skewX(0);
-          }
-          &:nth-child(3) {
-            transform: scale(1) skewY(0) skewX(19deg);
-
-          }
-
-          color: #fff;
-          font-size: 3.1rem;
-          text-shadow: 0 0 .4rem #fff;
-        }
-
-        & , > * {
-          display: flex;
-          width: 100%;
-          height: 100%;
-          justify-content: center;
-          align-items: center;
-
-        }
-
-
-      }
-
-      > *:last-child {
-        position: absolute;
-        bottom: 5%;
-        left: 50%;
-        transform: translate(-50%, 5%);
-        color: #FFF;
-        text-shadow: 1px 1px 2px #000;
-
-        font-size: 1.8rem;
-        transition: all .2s;
-        letter-spacing: 1px;
-        &:hover {
-          font-size: 1.9rem;
         }
       }
-
     }
-
   }
 }

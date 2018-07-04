@@ -1,34 +1,25 @@
 .drawer-button {
-  z-index: 10001;
+  z-index: 15;
   position: fixed;
   top: 3.5rem;
   right: 3.5rem;
-  background-color: transparent;
+  transform: translate(0, 0);
+  background-color: green;
   border: 0;
-  width: 56px;
-  height: 42px;
+  width: 62px;
+  height: 62px;
   cursor: pointer;
-  transition: all 11s linear;
+  border-radius: 50%;
 
   &__line {
     position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100% - 15px);
-    height: 2px;
-    border: 0;
-    background-color: #111;
-    box-shadow: 0 -1.3rem 0 #333, 0 1.3rem 0 #333;
-    animation: drawerButton .14s ease-in infinite;
+
   }
 
   &:hover {
 
     .drawer-button__line {
-      animation-name: drawerButtonHover;
-      animation-direction:alternate;
-      animation-duration: 1s;
     }
   }
 
