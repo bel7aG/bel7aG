@@ -8,7 +8,14 @@ const Header = (props) => {
         <DrawerToggleButton
           click={props.handleDrawerToggleButton}
         />
-        {props.isOpen && <Drawer isOpen={props.isOpen} />}
+        {
+          props.isOpen &&
+          <Drawer
+            isOpen={props.isOpen}
+            click={props.handleDrawerToggleButton}
+            class={props.class}
+          />
+        }
       </div>
     </header>
   );

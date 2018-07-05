@@ -1,3 +1,3 @@
-import Particles from './Particles';
+import ParticlesOption from './Particles';
 
-export default Particles;
+export default ParticlesOption;

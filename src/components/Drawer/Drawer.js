@@ -2,25 +2,19 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 const Drawer = (props) => {
-  let className = "toolbar__navigation__list-items";
-
-  if (props.isOpen) {
-    className = "toolbar__navigation__list-items opened"
-  }
-
   return (
     <React.Fragment>
-      <nav className="toolbar__navigation">
-        <div className={className}>
+      <nav className={props.class}>
+        <div className="toolbar__navigation__list-items">
           <ul>
             <li>
-              <NavLink to="/">About</NavLink>
+              <NavLink to="/" onClick={props.click}>About</NavLink>
             </li>
             <li>
-              <NavLink to="/portfolio">Portfolio</NavLink>
+              <NavLink to="/portfolio" onClick={props.click}>Portfolio</NavLink>
             </li>
             <li>
-              <NavLink to="/Cv">Cv</NavLink>
+              <NavLink to="/Cv" onClick={props.click}>Cv</NavLink>
             </li>
             <li>
               <a href="https://github.com/bel7aG" target="_blank">https://github.com/bel7aG</a>

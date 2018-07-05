@@ -4,14 +4,32 @@ import { Header, About, Portfolio, Cv, NotFound } from '../components';
 
 class AppRouter extends Component {
   state = {
-    drawerOpen: false
+    drawerOpen: false,
+    class: 'toolbar__navigation'
   };
 
   handleDrawerToggleButton = () => {
-    console.log(this.state.drawerOpen);
-    this.setState((prevState) => ({
-      drawerOpen: !prevState.drawerOpen
-    }));
+    if (!this.state.drawerOpen) {
+      this.setState(() => ({
+        class: 'toolbar__navigation'
+      }));
+      setTimeout(() => {
+        this.setState((prevState) => ({
+          drawerOpen: !prevState.drawerOpen,
+        }));
+      }, 800);
+
+    } else {
+      this.setState(() => ({
+        class: 'toolbar__navigation__out'
+      }));
+      setTimeout(() => {
+        this.setState((prevState) => ({
+          drawerOpen: !prevState.drawerOpen,
+        }));
+      }, 1600);
+
+    }
   };
 
   render() {
@@ -21,6 +39,7 @@ class AppRouter extends Component {
           <Header
             isOpen={this.state.drawerOpen}
             handleDrawerToggleButton={this.handleDrawerToggleButton}
+            class={this.state.class}
           />
           <Switch>
             <Route path="/" component={About} exact />

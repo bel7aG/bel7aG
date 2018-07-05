@@ -1,12 +1,13 @@
 body {
-  color: #010101;
   font-size: 1.5rem;
+  background-color: #FFF;
 }
 
 .container {
   > div:nth-child(2) {
     height: 100vh;
     width: 100vw;
+    color: #000;
     > * {
       z-index: 3;
       position: absolute;

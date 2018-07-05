@@ -1,25 +1,56 @@
 .drawer-button {
   z-index: 15;
   position: fixed;
-  top: 3.5rem;
-  right: 3.5rem;
+  top: 3rem;
+  right: 2.6rem;
   transform: translate(0, 0);
-  background-color: green;
+  background-color: transparent;
   border: 0;
-  width: 62px;
-  height: 62px;
+  width: 56px;
+  height: 56px;
   cursor: pointer;
-  border-radius: 50%;
 
   &__line {
     position: absolute;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    height: 2px;
+    border: 0;
+    width: calc(100% - 13px);
+    background-color: #000;
+    z-index: 1;
+    transition: all .3s;
+
+
+    &:first-child {
+      top: 13px;
+      transform: translate(-50%, -50%) ;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:last-child {
+      bottom: 13px;
+      transform: translate(-50%, 50%) ;
+    }
 
   }
 
   &:hover {
 
     .drawer-button__line {
+
+      &:first-child {
+
+      }
+
+      &:last-child {
+        animation: drawer-button-hover-line_two .3s;
+
+      }
+
     }
   }
 

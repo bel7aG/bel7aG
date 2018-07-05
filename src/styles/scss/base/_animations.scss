@@ -1,64 +1,3 @@
-@keyframes drawerButton {
-  0% {
-    box-shadow: 0 -1.3rem 0 #333, 0 1.3rem 0 #333;
-  }
-
-  50% {
-    box-shadow: 0 -1.2rem 0 #333, 0 1.2rem 0 #333;
-  }
-
-
-  100% {
-    box-shadow: 0 -1.3rem 0 #333, 0 1.3rem 0 #333;
-  }
-}
-
-
-@keyframes drawerButtonHover {
-  0% {
-    box-shadow: 0 -1.3rem 0 #333, 0 1.3rem 0 #333;
-  }
-
-  25% {
-    box-shadow: 1rem -1.3rem 0 #333, -1rem 1.3rem 0 #333;
-  }
-
-  50% {
-    box-shadow: -1rem -1.6rem 0 #333, 1rem 1.6rem 0 #333;
-  }
-
-  75% {
-    box-shadow: 0 -1.45rem 0 #333, 0 1.45rem 0 #333;
-
-  }
-
-  100% {
-    box-shadow: -1rem -1.6rem 0 #333, 1rem 1.6rem 0 #333;
-  }
-}
-
-@keyframes drawer {
-  0% {
-    font-size: 2.5rem;
-    letter-spacing: 0;
-  }
-
-  20% {
-    font-size: 2.5rem;
-    letter-spacing: 0;
-  }
-
-  70% {
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-  }
-
-  100% {
-    font-size: 2.9rem;
-    letter-spacing: 2px;
-  }
-}
-
 @keyframes drawerItem {
   from {
     background-position: 0 0;
@@ -70,19 +9,64 @@
 }
 
 @keyframes particlesBegin {
- 0% {
-   transform: scale(0);
- }
+  0% {
+    transform: scale(0);
+  }
 
- 50% {
-   transform: scale(0);
- }
+  50% {
+    transform: scale(0);
+  }
 
- 75% {
-   transform: scale(1.4);
- }
+  75% {
+    transform: scale(0);
+  }
 
- 100% {
-   transform: scale(1);
- }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes nav-in {
+  0% {
+    transform: translate(0, -100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes nav-out {
+  0% {
+    transform: translate(0, 0);
+  }
+
+
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+@keyframes drawer-item-in {
+  0% {
+    transform: translateY(-150%);
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes drawer-item-out {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+
+  }
+
+
+  100% {
+    transform: translateY(-60%);
+    opacity: 0;
+  }
 }

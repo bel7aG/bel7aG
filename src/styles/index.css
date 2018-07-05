@@ -17,7 +17,8 @@ body, .container, #root {
 
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  user-select: none; }
 
 *, *::before, *::after {
   box-sizing: inherit; }
@@ -37,12 +38,13 @@ pre, code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
 body {
-  color: #010101;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  background-color: #FFF; }
 
 .container > div:nth-child(2) {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  color: #000; }
   .container > div:nth-child(2) > * {
     z-index: 3;
     position: absolute; }
@@ -56,40 +58,6 @@ body {
   z-index: 0;
   animation: particlesBegin 3.3s ease-out; }
 
-@keyframes drawerButton {
-  0% {
-    box-shadow: 0 -1.3rem 0 #333, 0 1.3rem 0 #333; }
-  50% {
-    box-shadow: 0 -1.2rem 0 #333, 0 1.2rem 0 #333; }
-  100% {
-    box-shadow: 0 -1.3rem 0 #333, 0 1.3rem 0 #333; } }
-
-@keyframes drawerButtonHover {
-  0% {
-    box-shadow: 0 -1.3rem 0 #333, 0 1.3rem 0 #333; }
-  25% {
-    box-shadow: 1rem -1.3rem 0 #333, -1rem 1.3rem 0 #333; }
-  50% {
-    box-shadow: -1rem -1.6rem 0 #333, 1rem 1.6rem 0 #333; }
-  75% {
-    box-shadow: 0 -1.45rem 0 #333, 0 1.45rem 0 #333; }
-  100% {
-    box-shadow: -1rem -1.6rem 0 #333, 1rem 1.6rem 0 #333; } }
-
-@keyframes drawer {
-  0% {
-    font-size: 2.5rem;
-    letter-spacing: 0; }
-  20% {
-    font-size: 2.5rem;
-    letter-spacing: 0; }
-  70% {
-    font-size: 3.5rem;
-    letter-spacing: 2px; }
-  100% {
-    font-size: 2.9rem;
-    letter-spacing: 2px; } }
-
 @keyframes drawerItem {
   from {
     background-position: 0 0; }
@@ -102,9 +70,36 @@ body {
   50% {
     transform: scale(0); }
   75% {
-    transform: scale(1.4); }
+    transform: scale(0); }
   100% {
     transform: scale(1); } }
+
+@keyframes nav-in {
+  0% {
+    transform: translate(0, -100%); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes nav-out {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(0, -100%); } }
+
+@keyframes drawer-item-in {
+  0% {
+    transform: translateY(-150%); }
+  100% {
+    transform: translateY(0%);
+    opacity: 1; } }
+
+@keyframes drawer-item-out {
+  0% {
+    transform: translateY(0);
+    opacity: 1; }
+  100% {
+    transform: translateY(-60%);
+    opacity: 0; } }
 
 .header {
   position: fixed;
@@ -112,7 +107,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 222; }
-  .header .toolbar__navigation {
+  .header nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -121,16 +116,34 @@ body {
 
 .toolbar__navigation {
   transition: all .3s;
-  z-index: 10; }
+  z-index: 10;
+  transform: translate(0, 0);
+  animation: nav-in 0.8s cubic-bezier(1, 1.5, 0.6, 1); }
+  .toolbar__navigation__out {
+    animation-name: nav-out;
+    animation-duration: .7s;
+    animation-delay: .9s;
+    animation-timing-function: cubic-bezier(1, 1.5, 0.6, 1); }
+    .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child) {
+      animation-name: drawer-item-out !important;
+      animation-duration: .9s !important;
+      animation-fill-mode: forwards !important;
+      opacity: 1; }
+      .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child):first-child {
+        animation-delay: 0s !important; }
+      .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child):nth-child(2) {
+        animation-delay: .3s !important; }
+      .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child):nth-child(3) {
+        animation-delay: .6s !important; }
   .toolbar__navigation__list-items {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 11% 0 10% 0;
-    background-color: rgba(255, 0, 0, 0.861);
-    color: #969090; }
+    padding: 10% 0 9% 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #111; }
     .toolbar__navigation__list-items > ul {
       height: 100%;
       display: flex;
@@ -140,15 +153,26 @@ body {
       margin: auto 0; }
       .toolbar__navigation__list-items > ul > *:not(:last-child) {
         font-size: 2.5rem;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #EEE;
         transform: scale(1) skewY(0) skewX(0);
-        transition: all .3s; }
+        transition: all .3s;
+        opacity: 0;
+        animation-name: drawer-item-in;
+        animation-delay: 0;
+        animation-duration: .6s;
+        animation-fill-mode: forwards; }
+        .toolbar__navigation__list-items > ul > *:not(:last-child):first-child {
+          animation-delay: .7s; }
+        .toolbar__navigation__list-items > ul > *:not(:last-child):nth-child(2) {
+          animation-delay: .9s; }
+        .toolbar__navigation__list-items > ul > *:not(:last-child):nth-child(3) {
+          animation-delay: 1.1s; }
         .toolbar__navigation__list-items > ul > *:not(:last-child)::before {
           content: '';
           position: absolute;
           top: 0;
           left: 0;
-          background: linear-gradient(90deg, #8e0e00, #1f1c18);
+          background: linear-gradient(90deg, #18122f, #1f1f1f, #0f2a23, #18122f);
           background-size: 300%;
           width: 0;
           height: 100%;
@@ -158,7 +182,7 @@ body {
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover:before {
           width: 100%; }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover {
-          color: #fff;
+          color: #fff !important;
           font-size: 3.1rem;
           text-shadow: 0 0 .4rem #fff; }
           .toolbar__navigation__list-items > ul > *:not(:last-child):hover:first-child {
@@ -189,18 +213,34 @@ body {
 .drawer-button {
   z-index: 15;
   position: fixed;
-  top: 3.5rem;
-  right: 3.5rem;
+  top: 3rem;
+  right: 2.6rem;
   transform: translate(0, 0);
-  background-color: green;
+  background-color: transparent;
   border: 0;
-  width: 62px;
-  height: 62px;
-  cursor: pointer;
-  border-radius: 50%; }
+  width: 56px;
+  height: 56px;
+  cursor: pointer; }
   .drawer-button__line {
     position: absolute;
-    transform: translate(-50%, -50%); }
+    left: 50%;
+    height: 2px;
+    border: 0;
+    width: calc(100% - 13px);
+    background-color: #000;
+    z-index: 1;
+    transition: all .3s; }
+    .drawer-button__line:first-child {
+      top: 13px;
+      transform: translate(-50%, -50%); }
+    .drawer-button__line:nth-child(2) {
+      top: 50%;
+      transform: translate(-50%, -50%); }
+    .drawer-button__line:last-child {
+      bottom: 13px;
+      transform: translate(-50%, 50%); }
+  .drawer-button:hover .drawer-button__line:last-child {
+    animation: drawer-button-hover-line_two .3s; }
 
 .toolbar__navigation > .wire {
   z-index: 10;
