@@ -144,6 +144,14 @@ body {
   100% {
     transform: rotate(0); } }
 
+@keyframes rotate-back-out {
+  0% {
+    transform: rotate(0); }
+  45% {
+    transform: rotate(185deg); }
+  100% {
+    transform: rotate(180deg); } }
+
 .toolbar__navigation {
   transition: all .3s;
   z-index: 10;
@@ -239,15 +247,14 @@ body {
 .drawer-button {
   z-index: 444;
   position: fixed;
-  top: 3.2rem;
-  right: 2.6rem;
+  top: 3.5rem;
+  right: 2.8rem;
   background-color: transparent;
   border: 0;
   width: 52px;
   height: 40px;
   padding: 3px 5px;
-  cursor: pointer;
-  transition: all .4s; }
+  cursor: pointer; }
   .drawer-button__line {
     position: absolute;
     left: 50%;
@@ -257,7 +264,7 @@ body {
     background: #393737;
     z-index: 1;
     transform: translate3d(-50%, -50%, 0) scale(1);
-    transition: transform 0.45s cubic-bezier(0.43, 1.77, 0.15, 1.5), background 0.3s ease; }
+    transition: transform 0.45s cubic-bezier(0.43, 1.77, 0.15, 1.5); }
     .drawer-button__line:first-child {
       top: 13px; }
     .drawer-button__line:nth-child(2) {
@@ -265,31 +272,35 @@ body {
     .drawer-button__line:last-child {
       bottom: 13px;
       transform: translate3d(-50%, 50%, 0) rotate(0); }
-  .drawer-button:hover .drawer-button__line {
+  .drawer-button.hover-in .drawer-button__line {
     transform: translate3d(-50%, -50%, 0) scale(1.02);
     background-color: #000 !important; }
-    .drawer-button:hover .drawer-button__line:first-child {
+    .drawer-button.hover-in .drawer-button__line:first-child {
       transform: translate3d(-50%, -4px, 0) scale(1.02); }
-    .drawer-button:hover .drawer-button__line:last-child {
+    .drawer-button.hover-in .drawer-button__line:last-child {
       transform: translate3d(-50%, 4px, 0) scale(1.02); }
   .drawer-button.rotate-in {
-    animation: rotate-back-in 0.8s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
+    animation: rotate-back-in 1.2s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
     .drawer-button.rotate-in > * {
-      transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5), background 0.3s ease; }
+      transition: transform 0.55s cubic-bezier(0.43, 0.77, 0.15, 1.5); }
       .drawer-button.rotate-in > *:first-child {
         transform: translate3d(-50%, 9px, 0); }
       .drawer-button.rotate-in > *:last-child {
         transform: translate3d(-50%, -9px, 0); }
   .drawer-button.rotate-out {
-    animation: rotate-back-out 0.85s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
+    animation: rotate-back-out 1.2s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
     .drawer-button.rotate-out > * {
-      transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5), background 0.3s ease; }
+      transition: transform 0.55s cubic-bezier(0.43, 0.77, 0.15, 1.5); }
       .drawer-button.rotate-out > *:first-child {
         transform: translate3d(-50%, 10px, 0) rotate(45deg) scale(1.5); }
       .drawer-button.rotate-out > *:nth-child(2) {
         opacity: 0; }
       .drawer-button.rotate-out > *:last-child {
-        transform: translate3d(-50%, -10px, 0) rotate(-45deg) scale(1.5); }
+        transform: translate3d(-50%, 3px, 0) rotate(-45deg) scale(1.5); }
+  .drawer-button.hover-out > *:first-child {
+    transform: translate3d(-50%, 10px, 0) rotate(55deg) scale(1.6) !important; }
+  .drawer-button.hover-out > *:last-child {
+    transform: translate3d(-50%, -10px, 0) rotate(-55deg) scale(1.6) !important; }
 
 .header {
   position: fixed;

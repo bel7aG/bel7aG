@@ -143,3 +143,19 @@
     transform: rotate(0);
   }
 }
+
+@keyframes rotate-back-out {
+  0% {
+    transform: rotate(0);
+  }
+
+
+  45% {
+      transform: rotate(185deg);
+  }
+
+
+  100% {
+      transform: rotate(180deg);
+  }
+}

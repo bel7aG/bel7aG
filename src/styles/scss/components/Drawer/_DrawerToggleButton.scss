@@ -1,15 +1,14 @@
 .drawer-button {
   z-index: 444;
   position: fixed;
-  top: 3.2rem;
-  right: 2.6rem;
+  top: 3.5rem;
+  right: 2.8rem;
   background-color: transparent;
   border: 0;
   width: 52px;
   height: 40px;
   padding: 3px 5px;
   cursor: pointer;
-  transition: all .4s;
 
   &__line {
     position: absolute;
@@ -20,7 +19,7 @@
     background: #393737;
     z-index: 1;
     transform: translate3d(-50%, -50%, 0) scale(1);
-    transition: transform .45s cubic-bezier(.43, 1.77, .15, 1.5),background .3s ease;
+    transition: transform .45s cubic-bezier(.43, 1.77, .15, 1.5);
     &:first-child {
       top: 13px;
     }
@@ -36,17 +35,14 @@
 
   }
 
-  &:hover {
+  &.hover-in {
     .drawer-button__line {
       transform: translate3d(-50%, -50%, 0) scale(1.02);
 
-        background-color: #000 !important;
+      background-color: #000 !important;
 
       &:first-child {
         transform: translate3d(-50%, -4px, 0) scale(1.02);
-      }
-
-      :nth-child(2) {
       }
 
       &:last-child {
@@ -55,10 +51,11 @@
 
     }
   }
+
   &.rotate-in {
-    animation: rotate-back-in .8s cubic-bezier(.2,.86,.35,1) forwards;
+    animation: rotate-back-in 1.2s cubic-bezier(.2,.86,.35,1) forwards;
     > * {
-      transition: transform .45s cubic-bezier(.43,.77,.15,1.5),background .3s ease;
+      transition: transform .55s cubic-bezier(.43,.77,.15,1.5);
       &:first-child {
         transform: translate3d(-50%, 9px, 0);
       }
@@ -68,10 +65,10 @@
     }
   }
   &.rotate-out {
-    animation: rotate-back-out .85s cubic-bezier(.2,.86,.35,1) forwards;
+    animation: rotate-back-out 1.2s cubic-bezier(.2,.86,.35,1) forwards;
 
     > * {
-      transition: transform .45s cubic-bezier(.43,.77,.15,1.5),background .3s ease;
+      transition: transform .55s cubic-bezier(.43,.77,.15,1.5);
 
       &:first-child {
         transform: translate3d(-50%, 10px, 0) rotate(45deg) scale(1.5);
@@ -80,12 +77,21 @@
         opacity: 0;
       }
       &:last-child {
-        transform: translate3d(-50%, -10px, 0) rotate(-45deg) scale(1.5);
+        transform: translate3d(-50%, 3px, 0) rotate(-45deg) scale(1.5);
       }
     }
+  }
 
-    &:hover {
+  &.hover-out {
+    > * {
+      &:first-child {
+        transform: translate3d(-50%, 10px, 0) rotate(55deg) scale(1.6)!important;
+      }
+      &:last-child {
+        transform: translate3d(-50%, -10px, 0) rotate(-55deg) scale(1.6)!important;
+      }
 
     }
   }
+
 }

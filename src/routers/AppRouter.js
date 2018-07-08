@@ -6,7 +6,8 @@ class AppRouter extends Component {
   state = {
     drawerOpen: false,
     navClass: '',
-    handleToggleButtonClassName: 'drawer-button'
+    handleToggleButtonClassName: 'drawer-button',
+    isHoverToggleButton: false
   };
 
   handleDrawerToggleButton = () => {
@@ -42,8 +43,31 @@ class AppRouter extends Component {
     }
   };
 
-  onMouseOverToggleButton = () => {
-
+  isHoverToggleButton = () => {
+    switch (this.state.handleToggleButtonClassName) {
+      case 'drawer-button':
+        this.setState(() => ({
+          handleToggleButtonClassName: 'drawer-button hover-in'
+        }));
+        break;
+      case 'drawer-button rotate-in rotate-out':
+        this.setState(() => ({
+          handleToggleButtonClassName: 'drawer-button rotate-in rotate-out hover-out'
+        }));
+        break;
+      case 'drawer-button hover-in':
+        this.setState(() => ({
+          handleToggleButtonClassName: 'drawer-button'
+        }));
+        break;
+      case 'drawer-button rotate-in rotate-out hover-out':
+        this.setState(() => ({
+          handleToggleButtonClassName: 'drawer-button rotate-in rotate-out'
+        }));
+        break;
+      default:
+        break;
+    }
   }
 
   render() {
@@ -55,6 +79,7 @@ class AppRouter extends Component {
             handleDrawerToggleButton={this.handleDrawerToggleButton}
             navClass={this.state.navClass}
             handleToggleButtonClassName={this.state.handleToggleButtonClassName}
+            isHoverToggleButton={this.isHoverToggleButton}
           />
           <Main>
             <Switch>
