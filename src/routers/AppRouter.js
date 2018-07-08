@@ -7,7 +7,8 @@ class AppRouter extends Component {
     drawerOpen: false,
     navClass: '',
     handleToggleButtonClassName: 'drawer-button',
-    isHoverToggleButton: false
+    isHoverToggleButton: false,
+    mainClassName: 'main'
   };
 
   handleDrawerToggleButton = () => {
@@ -19,7 +20,9 @@ class AppRouter extends Component {
         this.setState((prevState) => ({
           drawerOpen: !prevState.drawerOpen,
           navClass: 'toolbar__navigation',
-          handleToggleButtonClassName: 'drawer-button rotate-in rotate-out'
+          handleToggleButtonClassName: 'drawer-button rotate-in rotate-out',
+          mainClassName: 'main hidden'
+
         }));
       }, 400);
     } else {
@@ -37,7 +40,8 @@ class AppRouter extends Component {
       setTimeout(() => {
         this.setState((prevState) => ({
           drawerOpen: !prevState.drawerOpen,
-          handleToggleButtonClassName: 'drawer-button'
+          handleToggleButtonClassName: 'drawer-button',
+          mainClassName: 'main'
         }));
       }, 1700);
     }
@@ -81,7 +85,7 @@ class AppRouter extends Component {
             handleToggleButtonClassName={this.state.handleToggleButtonClassName}
             isHoverToggleButton={this.isHoverToggleButton}
           />
-          <Main>
+          <Main className={this.state.mainClassName}>
             <Switch>
               <Route path="/" component={About} exact />
               <Route path="/portfolio" component={Portfolio} exact />

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Main = (props) => {
   return (
-    <div className="main">
+    <main className={props.className}>
       {props.children}
-    </div>
+    </main>
   );
 };
 

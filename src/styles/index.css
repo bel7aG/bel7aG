@@ -41,14 +41,6 @@ body {
   font-size: 1.5rem;
   background-color: #FFF; }
 
-.container > div:nth-child(2) {
-  height: 100vh;
-  width: 100vw;
-  color: #000; }
-  .container > div:nth-child(2) > * {
-    position: relative;
-    z-index: 22; }
-
 .particles {
   position: absolute;
   top: 0;
@@ -156,10 +148,14 @@ body {
   transition: all .3s;
   z-index: 10;
   transform: translate(0, 0);
-  animation: nav-in 0.6s cubic-bezier(1, 1.5, 0.6, 1); }
+  animation: nav-in 0.8s cubic-bezier(1, 1.5, 0.6, 1);
+  transition: all 0.45s 1s cubic-bezier(0.43, 1.77, 0.15, 1.5); }
+  .toolbar__navigation:hover::before {
+    width: 100%;
+    height: 100%; }
   .toolbar__navigation__out {
     animation-name: nav-out;
-    animation-duration: .7s;
+    animation-duration: .8s;
     animation-delay: .9s;
     animation-timing-function: ease-in; }
     .toolbar__navigation__out > .toolbar__navigation__list-items ul > *:not(:last-child) {
@@ -180,7 +176,7 @@ body {
     right: 0;
     bottom: 0;
     padding: 15% 0 9% 0;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.35);
     color: #111; }
     .toolbar__navigation__list-items > ul {
       height: 100%;
@@ -188,7 +184,8 @@ body {
       flex-direction: column;
       align-items: center;
       padding: 0 10%;
-      margin: auto 0; }
+      margin: auto 0;
+      background-color: rgba(255, 255, 255, 0.4); }
       .toolbar__navigation__list-items > ul > *:not(:last-child) {
         font-size: 2.5rem;
         border-bottom: 1px solid #EEE;
@@ -198,7 +195,8 @@ body {
         animation-name: drawer-item-in;
         animation-delay: 0;
         animation-duration: .6s;
-        animation-fill-mode: forwards; }
+        animation-fill-mode: forwards;
+        background-color: rgba(255, 255, 255, 0.56); }
         .toolbar__navigation__list-items > ul > *:not(:last-child):first-child {
           animation-delay: .7s; }
         .toolbar__navigation__list-items > ul > *:not(:last-child):nth-child(2) {
@@ -314,3 +312,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%; }
+
+.container > main:nth-child(2) {
+  height: 100vh;
+  width: 100vw;
+  color: #000;
+  opacity: 1;
+  transition: opacity .3s; }
+  .container > main:nth-child(2) > * {
+    position: relative;
+    z-index: 22; }
+  .container > main:nth-child(2).hidden {
+    opacity: 0; }
