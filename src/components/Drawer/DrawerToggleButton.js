@@ -2,10 +2,10 @@ import React from 'react';
 
 const DrawerToggleButton = (props) => {
   const classNameHover = "drawer-button";
-  const classNameUnHover = "drawer-button__hover";
+
   return (
     <div
-      className="drawer-button"
+      className={props.handleToggleButtonClassName}
       onClick={props.click}
     >
       <div className="drawer-button__line" />

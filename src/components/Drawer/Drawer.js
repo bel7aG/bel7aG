@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 const Drawer = (props) => {
   return (
     <React.Fragment>
-      <nav className={props.class}>
+      <nav className={props.navClass}>
         <div className="toolbar__navigation__list-items">
           <ul>
             <li>

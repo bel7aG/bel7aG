@@ -47,12 +47,11 @@ const ParticlesOption = {
       enable: true,
       speed: 10.2,
       direction: "none",
-      random: true,
       straight: false,
       out_mode: "bounce",
       bounce: false,
       attract: {
-        enable: true,
+        enable: false,
         rotateX: 1100,
         rotateY: 100
       }

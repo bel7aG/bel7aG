@@ -9,13 +9,13 @@
       animation-name: nav-out;
       animation-duration: .7s;
       animation-delay: .9s;
-      animation-timing-function: cubic-bezier(1, 1.5, .6, 1);
+      animation-timing-function: ease-in;
 
-      .toolbar__navigation__list-items {
+      > .toolbar__navigation__list-items {
         ul > *:not(:last-child) {
-          animation-name: drawer-item-out !important;
-          animation-duration: .9s !important;
-          animation-fill-mode: forwards !important;
+          animation-name: drawer-item-out;
+          animation-duration: .9s;
+          animation-fill-mode: forwards;
           opacity: 1;
 
           &:first-child {
@@ -39,7 +39,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 10% 0 9% 0;
+      padding: 15% 0 9% 0;
       background-color: rgba(#fff, .7);
       color: #111;
 
@@ -54,7 +54,7 @@
         > *:not(:last-child) {
           font-size: 2.5rem;
           border-bottom: 1px solid #EEE;
-          transform: scale(1) skewY(0) skewX(0);
+          transform: translate(0, 0) scale(1) skewY(0) skewX(0);
           transition: all .3s;
           opacity: 0;
           animation-name: drawer-item-in;
@@ -84,27 +84,17 @@
             width: 0;
             height: 100%;
             z-index: -1;
-            transition: width .58s cubic-bezier(1, 1.9, 0, 1) ;
-            animation: drawerItem 7s linear infinite;
+            transform: translate(0, 0) scale(1) skewY(0) skewX(0);
+            transition: transform .38s cubic-bezier(1, 1.9, 0, 1), width .58s cubic-bezier(1, 1.9, 0, 1) ;
+            animation: drawer-items 7s linear infinite;
           }
 
           &:hover:before {
             width: 100%;
+            transform: scale(1) skewY(0) skewX(-13deg);
           }
 
           &:hover {
-            &:first-child {
-              transform: scale(1) skewY(0) skewX(-19deg);
-            }
-
-            &:nth-child(2) {
-              transform: scale(1.06) skewY(0) skewX(0);
-            }
-
-            &:nth-child(3) {
-              transform: scale(1) skewY(0) skewX(19deg);
-            }
-
             color: #fff !important;
             font-size: 3.1rem;
             text-shadow: 0 0 .4rem #fff;
@@ -112,7 +102,7 @@
 
           & , > * {
             display: flex;
-            width: 100%;
+            width: 80%;
             height: 100%;
             justify-content: center;
             align-items: center;

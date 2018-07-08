@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Portfolio = () => (
-  <div>
-    Portfolio
-  </div>
-);
+const Portfolio = (props) => {
+  console.log(props);
+  return (
+    <div>
+      Portfolio
+    </div>
+  );
+};
 
 export default Portfolio;

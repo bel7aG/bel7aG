@@ -46,8 +46,8 @@ body {
   width: 100vw;
   color: #000; }
   .container > div:nth-child(2) > * {
-    z-index: 3;
-    position: absolute; }
+    position: relative;
+    z-index: 22; }
 
 .particles {
   position: absolute;
@@ -58,7 +58,7 @@ body {
   z-index: 0;
   animation: particlesBegin 3.3s ease-out; }
 
-@keyframes drawerItem {
+@keyframes drawer-items {
   from {
     background-position: 0 0; }
   to {
@@ -67,18 +67,21 @@ body {
 @keyframes particlesBegin {
   0% {
     transform: scale(0); }
-  50% {
-    transform: scale(0); }
+  50% { }
   75% {
-    transform: scale(0); }
+    transform: scale(1.1); }
   100% {
     transform: scale(1); } }
 
 @keyframes nav-in {
   0% {
-    transform: translate(0, -100%); }
+    transform: translate(0, -100%);
+    background-color: rgba(0, 0, 0, 0.83); }
+  9% {
+    background-color: rgba(0, 0, 0, 0.23); }
   100% {
-    transform: translate(0, 0); } }
+    transform: translate(0, 0) rotate(0);
+    background-color: #FFF; } }
 
 @keyframes nav-out {
   0% {
@@ -101,18 +104,37 @@ body {
     transform: translateY(-60%);
     opacity: 0; } }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 222; }
-  .header nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
+@keyframes toggle-button-top {
+  0% {
+    top: 13px;
+    transform: translate(-50%, -50%) rotate(0); }
+  25% {
+    top: 15px;
+    transform: translate(-50%, -50%) rotate(0deg); }
+  50% {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(355deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(365deg); }
+  100% {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(315deg); } }
+
+@keyframes toggle-button-bottom {
+  0% {
+    bottom: 13px;
+    transform: translate(-50%, 50%) rotate(0); }
+  25% {
+    bottom: 15px;
+    transform: translate(-50%, 50%) rotate(0deg); }
+  50% {
+    bottom: 50%;
+    transform: translate(-50%, 50%) rotate(-355deg); }
+  75% {
+    transform: translate(-50%, 50%) rotate(-365deg); }
+  100% {
+    bottom: 50%;
+    transform: translate(-50%, 50%) rotate(-315deg); } }
 
 .toolbar__navigation {
   transition: all .3s;
@@ -123,17 +145,17 @@ body {
     animation-name: nav-out;
     animation-duration: .7s;
     animation-delay: .9s;
-    animation-timing-function: cubic-bezier(1, 1.5, 0.6, 1); }
-    .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child) {
-      animation-name: drawer-item-out !important;
-      animation-duration: .9s !important;
-      animation-fill-mode: forwards !important;
+    animation-timing-function: ease-in; }
+    .toolbar__navigation__out > .toolbar__navigation__list-items ul > *:not(:last-child) {
+      animation-name: drawer-item-out;
+      animation-duration: .9s;
+      animation-fill-mode: forwards;
       opacity: 1; }
-      .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child):first-child {
+      .toolbar__navigation__out > .toolbar__navigation__list-items ul > *:not(:last-child):first-child {
         animation-delay: 0s !important; }
-      .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child):nth-child(2) {
+      .toolbar__navigation__out > .toolbar__navigation__list-items ul > *:not(:last-child):nth-child(2) {
         animation-delay: .3s !important; }
-      .toolbar__navigation__out .toolbar__navigation__list-items ul > *:not(:last-child):nth-child(3) {
+      .toolbar__navigation__out > .toolbar__navigation__list-items ul > *:not(:last-child):nth-child(3) {
         animation-delay: .6s !important; }
   .toolbar__navigation__list-items {
     position: fixed;
@@ -141,7 +163,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 10% 0 9% 0;
+    padding: 15% 0 9% 0;
     background-color: rgba(255, 255, 255, 0.7);
     color: #111; }
     .toolbar__navigation__list-items > ul {
@@ -154,7 +176,7 @@ body {
       .toolbar__navigation__list-items > ul > *:not(:last-child) {
         font-size: 2.5rem;
         border-bottom: 1px solid #EEE;
-        transform: scale(1) skewY(0) skewX(0);
+        transform: translate(0, 0) scale(1) skewY(0) skewX(0);
         transition: all .3s;
         opacity: 0;
         animation-name: drawer-item-in;
@@ -177,23 +199,19 @@ body {
           width: 0;
           height: 100%;
           z-index: -1;
-          transition: width 0.58s cubic-bezier(1, 1.9, 0, 1);
-          animation: drawerItem 7s linear infinite; }
+          transform: translate(0, 0) scale(1) skewY(0) skewX(0);
+          transition: transform 0.38s cubic-bezier(1, 1.9, 0, 1), width 0.58s cubic-bezier(1, 1.9, 0, 1);
+          animation: drawer-items 7s linear infinite; }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover:before {
-          width: 100%; }
+          width: 100%;
+          transform: scale(1) skewY(0) skewX(-13deg); }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover {
           color: #fff !important;
           font-size: 3.1rem;
           text-shadow: 0 0 .4rem #fff; }
-          .toolbar__navigation__list-items > ul > *:not(:last-child):hover:first-child {
-            transform: scale(1) skewY(0) skewX(-19deg); }
-          .toolbar__navigation__list-items > ul > *:not(:last-child):hover:nth-child(2) {
-            transform: scale(1.06) skewY(0) skewX(0); }
-          .toolbar__navigation__list-items > ul > *:not(:last-child):hover:nth-child(3) {
-            transform: scale(1) skewY(0) skewX(19deg); }
         .toolbar__navigation__list-items > ul > *:not(:last-child), .toolbar__navigation__list-items > ul > *:not(:last-child) > * {
           display: flex;
-          width: 100%;
+          width: 80%;
           height: 100%;
           justify-content: center;
           align-items: center; }
@@ -211,50 +229,53 @@ body {
           font-size: 1.9rem; }
 
 .drawer-button {
-  z-index: 15;
+  z-index: 444;
   position: fixed;
-  top: 3rem;
+  top: 3.2rem;
   right: 2.6rem;
-  transform: translate(0, 0);
   background-color: transparent;
   border: 0;
-  width: 56px;
-  height: 56px;
-  cursor: pointer; }
+  width: 52px;
+  height: 40px;
+  padding: 3px 5px;
+  cursor: pointer;
+  transition: all .4s; }
   .drawer-button__line {
     position: absolute;
     left: 50%;
     height: 2px;
     border: 0;
-    width: calc(100% - 13px);
-    background-color: #000;
+    width: 4.2rem;
+    background: #393737;
     z-index: 1;
-    transition: all .3s; }
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    transition: transform 0.45s cubic-bezier(0.43, 1.77, 0.15, 1.5), background 0.3s ease; }
     .drawer-button__line:first-child {
-      top: 13px;
-      transform: translate(-50%, -50%); }
+      top: 13px; }
     .drawer-button__line:nth-child(2) {
-      top: 50%;
-      transform: translate(-50%, -50%); }
+      top: 50%; }
     .drawer-button__line:last-child {
       bottom: 13px;
-      transform: translate(-50%, 50%); }
-  .drawer-button:hover .drawer-button__line:last-child {
-    animation: drawer-button-hover-line_two .3s; }
+      transform: translate3d(-50%, 50%, 0) rotate(0); }
+  .drawer-button:hover .drawer-button__line {
+    transform: translate3d(-50%, -50%, 0) scale(1.02);
+    background-color: #000 !important; }
+    .drawer-button:hover .drawer-button__line:first-child {
+      transform: translate3d(-50%, -4px, 0) scale(1.02); }
+    .drawer-button:hover .drawer-button__line:last-child {
+      transform: translate3d(-50%, 4px, 0) scale(1.02); }
+  .drawer-button.rotate-in {
+    animation: rotate-back-in 0.8s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
 
-.toolbar__navigation > .wire {
-  z-index: 10;
-  position: absolute;
-  background-color: #000; }
-  .toolbar__navigation > .wire:first-child {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 222; }
+  .header nav {
+    position: fixed;
     top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 1px;
-    height: 12.6%; }
-  .toolbar__navigation > .wire:nth-child(2) {
-    top: 50%;
     left: 0;
-    transform: translate(0, -50%);
-    width: 12.6%;
-    height: 1px; }
+    width: 100%;
+    height: 100%; }

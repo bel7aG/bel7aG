@@ -1,4 +1,4 @@
-@keyframes drawerItem {
+@keyframes drawer-items {
   from {
     background-position: 0 0;
   }
@@ -14,11 +14,10 @@
   }
 
   50% {
-    transform: scale(0);
   }
 
   75% {
-    transform: scale(0);
+    transform: scale(1.1);
   }
 
   100% {
@@ -29,9 +28,16 @@
 @keyframes nav-in {
   0% {
     transform: translate(0, -100%);
+    background-color: rgba(0, 0, 0, 0.83);
   }
+
+  9% {
+    background-color: rgba(0, 0, 0, 0.23);
+  }
+
   100% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) rotate(0);
+    background-color: #FFF;
   }
 }
 
@@ -39,7 +45,6 @@
   0% {
     transform: translate(0, 0);
   }
-
 
   100% {
     transform: translate(0, -100%);
@@ -61,12 +66,66 @@
   0% {
     transform: translateY(0);
     opacity: 1;
-
   }
-
 
   100% {
     transform: translateY(-60%);
     opacity: 0;
+  }
+}
+
+@keyframes toggle-button-top {
+  0% {
+    top: 13px;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  25% {
+    top: 15px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  50% {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(355deg);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) rotate(365deg);
+
+  }
+
+  100% {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(315deg);
+
+  }
+}
+
+@keyframes toggle-button-bottom {
+  0% {
+    bottom: 13px;
+    transform: translate(-50%, 50%) rotate(0);
+  }
+
+  25% {
+    bottom: 15px;
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
+
+  50% {
+    bottom: 50%;
+    transform: translate(-50%, 50%) rotate(-355deg);
+  }
+
+  75% {
+    transform: translate(-50%, 50%) rotate(-365deg);
+
+  }
+
+  100% {
+    bottom: 50%;
+    transform: translate(-50%, 50%) rotate(-315deg);
+
   }
 }

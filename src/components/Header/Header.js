@@ -6,6 +6,7 @@ const Header = (props) => {
     <header className="header">
       <div className="toolbar">
         <DrawerToggleButton
+          handleToggleButtonClassName={props.handleToggleButtonClassName}
           click={props.handleDrawerToggleButton}
         />
         {
@@ -13,7 +14,7 @@ const Header = (props) => {
           <Drawer
             isOpen={props.isOpen}
             click={props.handleDrawerToggleButton}
-            class={props.class}
+            navClass={props.navClass}
           />
         }
       </div>
