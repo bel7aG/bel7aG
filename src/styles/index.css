@@ -136,11 +136,19 @@ body {
     bottom: 50%;
     transform: translate(-50%, 50%) rotate(-315deg); } }
 
+@keyframes rotate-back-in {
+  0% {
+    transform: rotate(180deg); }
+  45% {
+    transform: rotate(-4deg); }
+  100% {
+    transform: rotate(0); } }
+
 .toolbar__navigation {
   transition: all .3s;
   z-index: 10;
   transform: translate(0, 0);
-  animation: nav-in 0.8s cubic-bezier(1, 1.5, 0.6, 1); }
+  animation: nav-in 0.6s cubic-bezier(1, 1.5, 0.6, 1); }
   .toolbar__navigation__out {
     animation-name: nav-out;
     animation-duration: .7s;
@@ -266,6 +274,22 @@ body {
       transform: translate3d(-50%, 4px, 0) scale(1.02); }
   .drawer-button.rotate-in {
     animation: rotate-back-in 0.8s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
+    .drawer-button.rotate-in > * {
+      transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5), background 0.3s ease; }
+      .drawer-button.rotate-in > *:first-child {
+        transform: translate3d(-50%, 9px, 0); }
+      .drawer-button.rotate-in > *:last-child {
+        transform: translate3d(-50%, -9px, 0); }
+  .drawer-button.rotate-out {
+    animation: rotate-back-out 0.85s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
+    .drawer-button.rotate-out > * {
+      transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5), background 0.3s ease; }
+      .drawer-button.rotate-out > *:first-child {
+        transform: translate3d(-50%, 10px, 0) rotate(45deg) scale(1.5); }
+      .drawer-button.rotate-out > *:nth-child(2) {
+        opacity: 0; }
+      .drawer-button.rotate-out > *:last-child {
+        transform: translate3d(-50%, -10px, 0) rotate(-45deg) scale(1.5); }
 
 .header {
   position: fixed;

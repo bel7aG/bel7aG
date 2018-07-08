@@ -57,6 +57,35 @@
   }
   &.rotate-in {
     animation: rotate-back-in .8s cubic-bezier(.2,.86,.35,1) forwards;
-    
+    > * {
+      transition: transform .45s cubic-bezier(.43,.77,.15,1.5),background .3s ease;
+      &:first-child {
+        transform: translate3d(-50%, 9px, 0);
+      }
+      &:last-child {
+        transform: translate3d(-50%,-9px,0);
+      }
+    }
+  }
+  &.rotate-out {
+    animation: rotate-back-out .85s cubic-bezier(.2,.86,.35,1) forwards;
+
+    > * {
+      transition: transform .45s cubic-bezier(.43,.77,.15,1.5),background .3s ease;
+
+      &:first-child {
+        transform: translate3d(-50%, 10px, 0) rotate(45deg) scale(1.5);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:last-child {
+        transform: translate3d(-50%, -10px, 0) rotate(-45deg) scale(1.5);
+      }
+    }
+
+    &:hover {
+
+    }
   }
 }
