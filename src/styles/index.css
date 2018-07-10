@@ -39,7 +39,8 @@ pre, code {
 
 body {
   font-size: 1.5rem;
-  background-color: #FFF; }
+  background-color: #FFF;
+  position: relative; }
 
 @keyframes drawer-items {
   from {
@@ -314,6 +315,8 @@ section.about > .lettering {
 
 .container > main:nth-child(2) {
   position: relative;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
   color: #000;
@@ -321,8 +324,8 @@ section.about > .lettering {
   transition: opacity .4s ease; }
   .container > main:nth-child(2) > section {
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     color: #000;
     opacity: 1;
     transition: transform .4s ease-out; }
@@ -348,10 +351,35 @@ section.about > .lettering {
     height: 100%;
     width: 100%; }
 
-.grid {
-  width: 1000px;
-  margin: 10rem auto;
-  background-color: rgba(219, 206, 235, 0.3); }
-  .grid > * {
-    font-size: 2rem;
+.grid h1 {
+  text-align: center;
+  height: auto;
+  font-size: 3rem; }
+
+.grid-layout {
+  position: relative;
+  width: 700px;
+  margin: 3rem auto;
+  background-color: rgba(214, 214, 214, 0.73);
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem 4rem; }
+  .grid-layout > .item {
+    z-index: 100;
+    height: 20rem;
+    color: #20b7f7;
+    font-size: 3rem;
     font-weight: 700; }
+    .grid-layout > .item--1 {
+      background-color: rgba(0, 0, 0, 0.5); }
+    .grid-layout > .item--2 {
+      background-color: rgba(34, 34, 34, 0.5); }
+    .grid-layout > .item--3 {
+      background-color: rgba(68, 68, 68, 0.5); }
+    .grid-layout > .item--4 {
+      background-color: rgba(102, 102, 102, 0.5); }
+    .grid-layout > .item--5 {
+      background-color: rgba(136, 136, 136, 0.5); }
+    .grid-layout > .item--6 {
+      background-color: rgba(170, 170, 170, 0.5); }

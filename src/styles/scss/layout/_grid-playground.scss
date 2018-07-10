@@ -1,9 +1,45 @@
 .grid {
-  width: 1000px;
-  margin: 10rem auto;
-  background-color: rgba(219, 206, 235, .3);
-  > * {
-    font-size: 2rem;
-    font-weight: 700;
+  h1 {
+    text-align: center;
+    height: auto;
+    font-size: 3rem;
+  }
+
+  &-layout {
+    position: relative;
+    width: 700px;
+    margin: 3rem auto;
+    background-color: rgba(214, 214, 214, 0.73);
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem 4rem;
+
+    > .item {
+      z-index: 100;
+      height: 20rem;
+      color: rgb(32, 183, 247);
+      font-size: 3rem;
+      font-weight: 700;
+
+      &--1 {
+        background-color: rgba(#000, .5);
+      }
+      &--2 {
+        background-color: rgba(#222, .5);
+      }
+      &--3 {
+        background-color: rgba(#444, .5);
+      }
+      &--4 {
+        background-color: rgba(#666, .5);
+      }
+      &--5 {
+        background-color: rgba(#888, .5);
+      }
+      &--6 {
+        background-color: rgba(#aaa, .5);
+      }
+    }
   }
 }
