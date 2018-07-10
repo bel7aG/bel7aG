@@ -1,0 +1,9 @@
+.grid {
+  width: 1000px;
+  margin: 10rem auto;
+  background-color: rgba(219, 206, 235, .3);
+  > * {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}

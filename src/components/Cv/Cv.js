@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Cv = () => (
-    <div className="cv">
+    <section className="cv">
       <h1>CV</h1>
-    </div>
+    </section>
 );
 
 export default Cv;

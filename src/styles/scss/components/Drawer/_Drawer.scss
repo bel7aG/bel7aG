@@ -56,7 +56,6 @@
         align-items: center;
         padding: 0 10%;
         margin: auto 0;
-        background-color: rgba(#fff, .4);
         > *:not(:last-child) {
           font-size: 2.5rem;
           border-bottom: 1px solid #EEE;
@@ -67,7 +66,6 @@
           animation-delay: 0;
           animation-duration: .6s;
           animation-fill-mode: forwards;
-          background-color: rgba(#fff, .56);
 
           &:first-child {
             animation-delay: .7s;

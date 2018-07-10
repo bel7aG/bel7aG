@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Header, Main, About, Portfolio, Cv, NotFound } from '../components';
+import GridPlayground from '../playground/Grid';
 
 class AppRouter extends Component {
   state = {
@@ -16,13 +17,13 @@ class AppRouter extends Component {
       this.setState(() => ({
         handleToggleButtonClassName: 'drawer-button rotate-in'
       }));
+
       setTimeout(() => {
         this.setState((prevState) => ({
           drawerOpen: !prevState.drawerOpen,
           navClass: 'toolbar__navigation',
           handleToggleButtonClassName: 'drawer-button rotate-in rotate-out',
           mainClassName: 'main hidden'
-
         }));
       }, 400);
     } else {
@@ -90,6 +91,7 @@ class AppRouter extends Component {
               <Route path="/" component={About} exact />
               <Route path="/portfolio" component={Portfolio} exact />
               <Route path="/cv" component={Cv} exact />
+              <Route path="/GridPlayground" component={GridPlayground} exact/>
               <Route component={NotFound} />
             </Switch>
           </Main>

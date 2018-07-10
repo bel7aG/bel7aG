@@ -1,0 +1,17 @@
+section {
+
+  &.about {
+
+  > .lettering {
+      z-index: 22;
+      display: grid;
+      grid-template-columns: 50%;
+      position: relative;
+      top: 30%;
+      transform: translateY(-30%);
+      > .heading-primary {
+        text-align: center;
+      }
+    }
+  }
+}

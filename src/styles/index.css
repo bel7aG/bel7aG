@@ -41,15 +41,6 @@ body {
   font-size: 1.5rem;
   background-color: #FFF; }
 
-.particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-  animation: particlesBegin 3.3s ease-out; }
-
 @keyframes drawer-items {
   from {
     background-position: 0 0; }
@@ -184,8 +175,7 @@ body {
       flex-direction: column;
       align-items: center;
       padding: 0 10%;
-      margin: auto 0;
-      background-color: rgba(255, 255, 255, 0.4); }
+      margin: auto 0; }
       .toolbar__navigation__list-items > ul > *:not(:last-child) {
         font-size: 2.5rem;
         border-bottom: 1px solid #EEE;
@@ -195,8 +185,7 @@ body {
         animation-name: drawer-item-in;
         animation-delay: 0;
         animation-duration: .6s;
-        animation-fill-mode: forwards;
-        background-color: rgba(255, 255, 255, 0.56); }
+        animation-fill-mode: forwards; }
         .toolbar__navigation__list-items > ul > *:not(:last-child):first-child {
           animation-delay: .7s; }
         .toolbar__navigation__list-items > ul > *:not(:last-child):nth-child(2) {
@@ -300,6 +289,16 @@ body {
   .drawer-button.hover-out > *:last-child {
     transform: translate3d(-50%, -10px, 0) rotate(-55deg) scale(1.6) !important; }
 
+section.about > .lettering {
+  z-index: 22;
+  display: grid;
+  grid-template-columns: 50%;
+  position: relative;
+  top: 30%;
+  transform: translateY(-30%); }
+  section.about > .lettering > .heading-primary {
+    text-align: center; }
+
 .header {
   position: fixed;
   top: 0;
@@ -314,13 +313,45 @@ body {
     height: 100%; }
 
 .container > main:nth-child(2) {
+  position: relative;
   height: 100vh;
   width: 100vw;
   color: #000;
   opacity: 1;
-  transition: opacity .3s; }
-  .container > main:nth-child(2) > * {
+  transition: opacity .4s ease; }
+  .container > main:nth-child(2) > section {
     position: relative;
-    z-index: 22; }
+    height: 100vh;
+    width: 100vw;
+    color: #000;
+    opacity: 1;
+    transition: transform .4s ease-out; }
   .container > main:nth-child(2).hidden {
     opacity: 0; }
+    .container > main:nth-child(2).hidden > * {
+      transform: scale(0.92); }
+
+.particles {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  animation: particlesBegin 3.3s ease-out; }
+  .particles > canvas {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+
+.grid {
+  width: 1000px;
+  margin: 10rem auto;
+  background-color: rgba(219, 206, 235, 0.3); }
+  .grid > * {
+    font-size: 2rem;
+    font-weight: 700; }
