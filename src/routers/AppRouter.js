@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Header, Main, About, Portfolio, Cv, NotFound } from '../components';
-import GridPlayground from '../playground/Grid';
+import GridPlayground from '../playground/Grid/Grid';
+import GridChallangeOne from '../playground/Grid/GridChallangeOne';
 
 class AppRouter extends Component {
   state = {
@@ -92,6 +93,7 @@ class AppRouter extends Component {
               <Route path="/portfolio" component={Portfolio} exact />
               <Route path="/cv" component={Cv} exact />
               <Route path="/GridPlayground" component={GridPlayground} exact/>
+              <Route path="/grid-challange-one" component={GridChallangeOne} exact/>
               <Route component={NotFound} />
             </Switch>
           </Main>
