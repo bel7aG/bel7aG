@@ -9,6 +9,7 @@ const Header = (props) => {
           handleToggleButtonClassName={props.handleToggleButtonClassName}
           click={props.handleDrawerToggleButton}
           isHoverToggleButton={props.isHoverToggleButton}
+          isToggleButtonClicked={props.isToggleButtonClicked}
         />
         {
           props.isOpen &&

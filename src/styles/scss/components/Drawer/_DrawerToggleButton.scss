@@ -3,12 +3,16 @@
   position: fixed;
   top: 3.5rem;
   right: 2.8rem;
-  background-color: transparent;
-  border: 0;
   width: 52px;
   height: 40px;
   padding: 3px 5px;
   cursor: pointer;
+  background-color: transparent;
+  transition: transform .16s ease-out;
+
+  &:active {
+    transform: scale(.93) perspective(5000);
+  }
 
   &__line {
     position: absolute;
@@ -37,16 +41,16 @@
 
   &.hover-in {
     .drawer-button__line {
-      transform: translate3d(-50%, -50%, 0) scale(1.02);
+      transform: translate3d(-50%, -50%, 0) scale(1.08);
 
       background-color: #000 !important;
 
       &:first-child {
-        transform: translate3d(-50%, -4px, 0) scale(1.02);
+        transform: translate3d(-50%, -4px, 0) scale(1.08);
       }
 
       &:last-child {
-        transform: translate3d(-50%, 4px, 0) scale(1.02);
+        transform: translate3d(-50%, 4px, 0) scale(1.08);
       }
 
     }

@@ -37,6 +37,11 @@ img {
 pre, code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
+button {
+  border: none; }
+  button:focus {
+    outline: none; }
+
 body {
   font-size: 1.5rem;
   background-color: #FFF;
@@ -142,9 +147,6 @@ body {
   transform: translate(0, 0);
   animation: nav-in 0.8s cubic-bezier(1, 1.5, 0.6, 1);
   transition: all 0.45s 1s cubic-bezier(0.43, 1.77, 0.15, 1.5); }
-  .toolbar__navigation:hover::before {
-    width: 100%;
-    height: 100%; }
   .toolbar__navigation__out {
     animation-name: nav-out;
     animation-duration: .8s;
@@ -175,11 +177,10 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0 10%;
-      margin: auto 0; }
+      padding: 0 10%; }
       .toolbar__navigation__list-items > ul > *:not(:last-child) {
         font-size: 2.5rem;
-        border-bottom: 1px solid #EEE;
+        border-bottom: 1px solid #DDD;
         transform: translate(0, 0) scale(1) skewY(0) skewX(0);
         transition: all .3s;
         opacity: 0;
@@ -208,17 +209,20 @@ body {
           animation: drawer-items 7s linear infinite; }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover:before {
           width: 100%;
-          transform: scale(1) skewY(0) skewX(-13deg); }
+          transform: scale(1) skewY(0) skewX(-8deg); }
         .toolbar__navigation__list-items > ul > *:not(:last-child):hover {
           color: #fff !important;
           font-size: 3.1rem;
           text-shadow: 0 0 .4rem #fff; }
         .toolbar__navigation__list-items > ul > *:not(:last-child), .toolbar__navigation__list-items > ul > *:not(:last-child) > * {
           display: flex;
-          width: 80%;
           height: 100%;
           justify-content: center;
           align-items: center; }
+        .toolbar__navigation__list-items > ul > *:not(:last-child) {
+          width: 75%; }
+        .toolbar__navigation__list-items > ul > *:not(:last-child) > * {
+          width: 100%; }
       .toolbar__navigation__list-items > ul > *:last-child {
         position: absolute;
         bottom: 5%;
@@ -237,12 +241,14 @@ body {
   position: fixed;
   top: 3.5rem;
   right: 2.8rem;
-  background-color: transparent;
-  border: 0;
   width: 52px;
   height: 40px;
   padding: 3px 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  background-color: transparent;
+  transition: transform .16s ease-out; }
+  .drawer-button:active {
+    transform: scale(0.93) perspective(5000); }
   .drawer-button__line {
     position: absolute;
     left: 50%;
@@ -261,12 +267,12 @@ body {
       bottom: 13px;
       transform: translate3d(-50%, 50%, 0) rotate(0); }
   .drawer-button.hover-in .drawer-button__line {
-    transform: translate3d(-50%, -50%, 0) scale(1.02);
+    transform: translate3d(-50%, -50%, 0) scale(1.08);
     background-color: #000 !important; }
     .drawer-button.hover-in .drawer-button__line:first-child {
-      transform: translate3d(-50%, -4px, 0) scale(1.02); }
+      transform: translate3d(-50%, -4px, 0) scale(1.08); }
     .drawer-button.hover-in .drawer-button__line:last-child {
-      transform: translate3d(-50%, 4px, 0) scale(1.02); }
+      transform: translate3d(-50%, 4px, 0) scale(1.08); }
   .drawer-button.rotate-in {
     animation: rotate-back-in 1.2s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
     .drawer-button.rotate-in > * {
@@ -395,30 +401,77 @@ section.about > .lettering {
       grid-row: 1 / 2;
       grid-column: 1 / 2; }
 
+/*
+.grid-challange1 {
+  > .layout {
+    position: relative;
+    height: calc(100vh - 16rem);
+    display: grid;
+    padding: 2rem 9rem;
+    grid-template-rows: 1fr repeat(3, 2fr) 4fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem 3rem;
+
+  > .item {
+      z-index: 100;
+      background-color: rgba(red, .7);
+      font-size: 2rem;
+      &-1 {
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+      }
+      &-2 {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      &-3 {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+      &-4 {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+      &-5 {
+        grid-row: 2 / -2;
+        grid-column: 4 / -1;
+      }
+      &-6 {
+        grid-area: 3 / 1 / -2 / -2;
+      }
+      &-7 {
+        grid-area: -2 / 1 / -1 / -1;
+      }
+    }
+  }
+}
+*/
 .grid-challange1 > .layout {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 16rem);
   display: grid;
-  grid-template-rows: 1fr repeat(3, 2fr) 6fr 4fr 1fr;
-  grid-template-columns: repeat(4, 1fr);
+  padding: 2rem 9rem;
+  grid-template-rows: [header-start] 1fr [header-end box-start sidebar-start] 2fr [box-end main-start] 4fr [sidebar-end main-end footer-start] 1fr [footer-end];
+  grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
   grid-gap: 1rem 3rem; }
   .grid-challange1 > .layout > .item {
     z-index: 100;
-    background-color: red;
-    font-size: 2rem; }
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFF;
+    font-size: 2rem;
+    transition: transform .2s ease-in; }
+    .grid-challange1 > .layout > .item:hover {
+      transform: scale(1.02); }
     .grid-challange1 > .layout > .item-1 {
-      grid-row: 1 / 2;
-      grid-column: 1 / -1; }
+      grid-row: header-start / header-end;
+      grid-column: col-start 1 / col-end 4; }
     .grid-challange1 > .layout > .item-2 {
-      grid-area: 2 / 1 / 3 / 2; }
+      grid-area: box-start / col-start 1 / box-end / col-end 1; }
     .grid-challange1 > .layout > .item-3 {
-      grid-area: 2 / 2 / 3 / 3; }
+      grid-area: box-start / col-start 2 / box-end / col-end 2; }
     .grid-challange1 > .layout > .item-4 {
-      grid-area: 2 / 3 / 3 / 4; }
+      grid-area: box-start / col-start 3 / box-end / col-end 3; }
     .grid-challange1 > .layout > .item-5 {
-      grid-row: 2 / -2;
-      grid-column: 4 / -1; }
+      grid-row: sidebar-start / sidebar-end;
+      grid-column: col-start 4 / col-end 4; }
     .grid-challange1 > .layout > .item-6 {
-      grid-area: 3 / 1 / -2 / -2; }
+      grid-area: main-start / col-start 1 / main-end / col-end 3; }
     .grid-challange1 > .layout > .item-7 {
-      grid-area: -2 / 1 / -1 / -1; }
+      grid-area: footer-start / col-start 1 / foote-end / col-end 4; }

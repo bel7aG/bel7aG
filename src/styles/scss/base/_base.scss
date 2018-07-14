@@ -48,3 +48,11 @@ img {
 pre, code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+button {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}

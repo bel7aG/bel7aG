@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Header, Main, About, Portfolio, Cv, NotFound } from '../components';
-import GridPlayground from '../playground/Grid/Grid';
-import GridChallangeOne from '../playground/Grid/GridChallangeOne';
 
 class AppRouter extends Component {
   state = {
@@ -10,14 +8,22 @@ class AppRouter extends Component {
     navClass: '',
     handleToggleButtonClassName: 'drawer-button',
     isHoverToggleButton: false,
+    isToggleButtonClicked: false,
     mainClassName: 'main'
   };
 
   handleDrawerToggleButton = () => {
     if (!this.state.drawerOpen) {
       this.setState(() => ({
-        handleToggleButtonClassName: 'drawer-button rotate-in'
+        handleToggleButtonClassName: 'drawer-button rotate-in',
+        isToggleButtonClicked: true
       }));
+
+      setTimeout(() => {
+        this.setState(() => ({
+          isToggleButtonClicked: false
+        }));
+      }, 1900);
 
       setTimeout(() => {
         this.setState((prevState) => ({
@@ -27,10 +33,13 @@ class AppRouter extends Component {
           mainClassName: 'main hidden'
         }));
       }, 400);
+
+
     } else {
       this.setState(() => ({
         navClass: 'toolbar__navigation__out',
-        handleToggleButtonClassName: 'drawer-button rotate-in rotate-out'
+        handleToggleButtonClassName: 'drawer-button rotate-in rotate-out',
+        isToggleButtonClicked: true
       }));
 
       setTimeout(() => {
@@ -43,7 +52,8 @@ class AppRouter extends Component {
         this.setState((prevState) => ({
           drawerOpen: !prevState.drawerOpen,
           handleToggleButtonClassName: 'drawer-button',
-          mainClassName: 'main'
+          mainClassName: 'main',
+          isToggleButtonClicked: false
         }));
       }, 1700);
     }
@@ -86,14 +96,13 @@ class AppRouter extends Component {
             navClass={this.state.navClass}
             handleToggleButtonClassName={this.state.handleToggleButtonClassName}
             isHoverToggleButton={this.isHoverToggleButton}
+            isToggleButtonClicked={this.state.isToggleButtonClicked}
           />
           <Main className={this.state.mainClassName}>
             <Switch>
               <Route path="/" component={About} exact />
               <Route path="/portfolio" component={Portfolio} exact />
               <Route path="/cv" component={Cv} exact />
-              <Route path="/GridPlayground" component={GridPlayground} exact/>
-              <Route path="/grid-challange-one" component={GridChallangeOne} exact/>
               <Route component={NotFound} />
             </Switch>
           </Main>

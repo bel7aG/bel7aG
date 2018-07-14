@@ -6,11 +6,6 @@
     animation: nav-in .8s cubic-bezier(1, 1.5, .6, 1);
     transition: all .45s 1s cubic-bezier(.43, 1.77, .15, 1.5);
 
-    &:hover::before {
-      width: 100%;
-      height: 100%;
-    }
-
     &__out {
       animation-name: nav-out;
       animation-duration: .8s;
@@ -55,10 +50,10 @@
         flex-direction: column;
         align-items: center;
         padding: 0 10%;
-        margin: auto 0;
+
         > *:not(:last-child) {
           font-size: 2.5rem;
-          border-bottom: 1px solid #EEE;
+          border-bottom: 1px solid #DDD;
           transform: translate(0, 0) scale(1) skewY(0) skewX(0);
           transition: all .3s;
           opacity: 0;
@@ -96,8 +91,10 @@
 
           &:hover:before {
             width: 100%;
-            transform: scale(1) skewY(0) skewX(-13deg);
+            transform: scale(1) skewY(0) skewX(-8deg);
           }
+
+
 
           &:hover {
             color: #fff !important;
@@ -107,10 +104,16 @@
 
           & , > * {
             display: flex;
-            width: 80%;
             height: 100%;
             justify-content: center;
             align-items: center;
+          }
+
+          & {
+            width: 75%;
+          }
+          > * {
+            width: 100%;
           }
         }
 

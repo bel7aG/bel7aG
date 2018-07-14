@@ -17,12 +17,6 @@ const Drawer = (props) => {
               <NavLink to="/Cv" onClick={props.click}>Cv</NavLink>
             </li>
             <li>
-              <NavLink to="/GridPlayground" onClick={props.click}>Grid</NavLink>
-            </li>
-            <li>
-              <NavLink to="/grid-challange-one" onClick={props.click}>Grid Challange 1</NavLink>
-            </li>
-            <li>
               <a href="https://github.com/bel7aG" target="_blank">https://github.com/bel7aG</a>
             </li>
           </ul>
