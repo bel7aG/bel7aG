@@ -14,7 +14,7 @@ const Drawer = (props) => {
               <NavLink to="/portfolio" onClick={props.click}>Portfolio</NavLink>
             </li>
             <li>
-              <NavLink to="/Cv" onClick={props.click}>Cv</NavLink>
+              <NavLink to="/contact" onClick={props.click}>Contact</NavLink>
             </li>
             <li>
               <a href="https://github.com/bel7aG" target="_blank">https://github.com/bel7aG</a>

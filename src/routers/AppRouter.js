@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Header, Main, About, Portfolio, Cv, NotFound } from '../components';
+import React, { Component } from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Header, Main, About, Portfolio, Contact, NotFound } from '../components'
 
 class AppRouter extends Component {
   state = {
@@ -10,20 +10,20 @@ class AppRouter extends Component {
     isHoverToggleButton: false,
     isToggleButtonClicked: false,
     mainClassName: 'main'
-  };
+  }
 
   handleDrawerToggleButton = () => {
     if (!this.state.drawerOpen) {
       this.setState(() => ({
         handleToggleButtonClassName: 'drawer-button rotate-in',
         isToggleButtonClicked: true
-      }));
+      }))
 
       setTimeout(() => {
         this.setState(() => ({
           isToggleButtonClicked: false
-        }));
-      }, 1900);
+        }))
+      }, 1900)
 
       setTimeout(() => {
         this.setState((prevState) => ({
@@ -31,8 +31,8 @@ class AppRouter extends Component {
           navClass: 'toolbar__navigation',
           handleToggleButtonClassName: 'drawer-button rotate-in rotate-out',
           mainClassName: 'main hidden'
-        }));
-      }, 400);
+        }))
+      }, 400)
 
 
     } else {
@@ -40,13 +40,13 @@ class AppRouter extends Component {
         navClass: 'toolbar__navigation__out',
         handleToggleButtonClassName: 'drawer-button rotate-in rotate-out',
         isToggleButtonClicked: true
-      }));
+      }))
 
       setTimeout(() => {
         this.setState(() => ({
           handleToggleButtonClassName: 'drawer-button rotate-in '
-        }));
-      }, 800);
+        }))
+      }, 800)
 
       setTimeout(() => {
         this.setState((prevState) => ({
@@ -54,35 +54,39 @@ class AppRouter extends Component {
           handleToggleButtonClassName: 'drawer-button',
           mainClassName: 'main',
           isToggleButtonClicked: false
-        }));
-      }, 1700);
+        }))
+      }, 1700)
     }
-  };
+  }
 
   isHoverToggleButton = () => {
     switch (this.state.handleToggleButtonClassName) {
       case 'drawer-button':
         this.setState(() => ({
           handleToggleButtonClassName: 'drawer-button hover-in'
-        }));
-        break;
+        }))
+        break
+
       case 'drawer-button rotate-in rotate-out':
         this.setState(() => ({
           handleToggleButtonClassName: 'drawer-button rotate-in rotate-out hover-out'
-        }));
-        break;
+        }))
+        break
+
       case 'drawer-button hover-in':
         this.setState(() => ({
           handleToggleButtonClassName: 'drawer-button'
-        }));
-        break;
+        }))
+        break
+
       case 'drawer-button rotate-in rotate-out hover-out':
         this.setState(() => ({
           handleToggleButtonClassName: 'drawer-button rotate-in rotate-out'
-        }));
-        break;
+        }))
+        break
+
       default:
-        break;
+        break
     }
   }
 
@@ -102,14 +106,14 @@ class AppRouter extends Component {
             <Switch>
               <Route path="/" component={About} exact />
               <Route path="/portfolio" component={Portfolio} exact />
-              <Route path="/cv" component={Cv} exact />
+              <Route path="/contact" component={Contact} exact />
               <Route component={NotFound} />
             </Switch>
           </Main>
         </React.Fragment>
       </BrowserRouter>
-    );
+    )
   }
 }
 
-export default AppRouter;
+export default AppRouter
