@@ -96,6 +96,7 @@ class Router extends Component {
         <React.Fragment>
           <Header
             isOpen={this.state.drawerOpen}
+            pages={this.props.pages}
             handleDrawerToggleButton={this.handleDrawerToggleButton}
             navClass={this.state.navClass}
             handleToggleButtonClassName={this.state.handleToggleButtonClassName}

@@ -14,6 +14,7 @@ const Header = (props) => {
         {
           props.isOpen &&
           <Drawer
+            pages={props.pages}
             isOpen={props.isOpen}
             click={props.handleDrawerToggleButton}
             navClass={props.navClass}

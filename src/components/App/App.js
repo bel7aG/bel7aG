@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Particles from 'react-particles-js';
 import { Router } from '..';
 import { ParticlesOption } from '..';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className="container">
-        <Router />
-        <Particles
-          params={ParticlesOption}
-          className="particles"
-        />
-      </div>
-    );
-  }
-}
+const pages = [
+  { title: `About`, url: `/` },
+  { title: `Portfolio`, url: `/portfolio` },
+  { title: `Contact`, url: `/contact` }
+]
+
+const App = () => (
+  <div className="container">
+    <Router pages={pages}/>
+    <Particles
+      params={ParticlesOption}
+      className="particles"
+    />
+  </div>
+)
+
+export default App
