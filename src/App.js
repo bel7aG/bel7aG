@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppRouter from './routers/AppRouter';
+import { Router } from './components';
 import { ParticlesOption } from './components';
 import Particles from 'react-particles-js';
 
@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <AppRouter />
+        <Router />
         <Particles
           params={ParticlesOption}
           className="particles"

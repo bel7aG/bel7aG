@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Header, Main, About, Portfolio, Contact, NotFound } from '../components'
+import { Header, Main, About, Portfolio, Contact, NotFound } from '../'
 
-class AppRouter extends Component {
+class Router extends Component {
   state = {
     drawerOpen: false,
     navClass: '',
@@ -116,4 +116,4 @@ class AppRouter extends Component {
   }
 }
 
-export default AppRouter
+export default Router
