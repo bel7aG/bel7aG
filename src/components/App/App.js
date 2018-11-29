@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Router } from './components';
-import { ParticlesOption } from './components';
 import Particles from 'react-particles-js';
+import { Router } from '..';
+import { ParticlesOption } from '..';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="container">
@@ -16,5 +16,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

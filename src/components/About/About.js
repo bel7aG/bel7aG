@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { MyPicture } from '../'
 
 const About = () => (
   <section className="about">

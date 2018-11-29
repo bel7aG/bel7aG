@@ -357,6 +357,9 @@ section.about > .lettering {
     height: 100%;
     width: 100%; }
 
+.my-image {
+  background-color: red; }
+
 .grid h1 {
   text-align: center;
   height: auto;
