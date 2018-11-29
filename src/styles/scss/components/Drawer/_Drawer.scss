@@ -40,7 +40,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 15% 0 9% 0;
+      padding: 9.7rem 0 8.4rem 0;
       background-color: rgba(#fff, .35);
       color: #111;
 
@@ -71,6 +71,7 @@
           }
 
           &:nth-child(3) {
+            border-bottom: 0;
             animation-delay: 1.1s;
           }
 
@@ -94,8 +95,6 @@
             transform: scale(1) skewY(0) skewX(-8deg);
           }
 
-
-
           &:hover {
             color: #fff !important;
             font-size: 3.1rem;
@@ -110,8 +109,9 @@
           }
 
           & {
-            width: 75%;
+            width: 91%;
           }
+
           > * {
             width: 100%;
           }
@@ -119,7 +119,7 @@
 
         > *:last-child {
           position: absolute;
-          bottom: 5%;
+          bottom: 2.6rem;
           left: 50%;
           transform: translate(-50%, 5%);
           color: #FFF;
