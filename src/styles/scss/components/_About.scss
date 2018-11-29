@@ -2,15 +2,82 @@ section {
 
   &.about {
 
-  > .lettering {
-      z-index: 22;
-      display: grid;
-      grid-template-columns: 50%;
-      position: relative;
-      top: 30%;
-      transform: translateY(-30%);
-      > .heading-primary {
-        text-align: center;
+    > .letter-box {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 0 7rem;
+
+      > .lettering {
+        z-index: 111;
+        position: relative;
+        transform: scale(.981);
+        transition: all .2s;
+        padding: 0;
+
+        > :hover {
+          transform: scale(1);
+          .heading-primary-sub__tag {
+            transition: all .2s;
+            font-size: 2rem !important;
+            color: #000 !important;
+
+            &-big-g {
+              transition: all .2s;
+              font-size: 2.1rem !important;
+
+            }
+          }
+        }
+
+        > .heading-primary {
+
+          > span {
+            display: block;
+          }
+
+          > span:first-child {
+            font-size: 2.2rem;
+            color: #333;
+          }
+
+          > span:nth-child(2) {
+            font-size: 1.4rem;
+            color: #444;
+
+            > span:first-child {
+              display: block;
+              font-weight: 700;
+              color: #888;
+              font-size: 1.5rem;
+              transition: all .2s;
+              > span {
+                font-size: 1.67rem;
+                color: #666;
+                transition: all .2s;
+                letter-spacing: 1px;
+              }
+            }
+
+            > span:nth-child(2) {
+              color: #000;
+              font-size: 2.3rem;
+            }
+          }
+        }
+        > p {
+          margin: 1rem 0;
+          letter-spacing: 1px;
+          color: #333
+        }
+        > address {
+          height: 2rem;
+          > span {
+            user-select: text;
+          }
+        }
       }
     }
   }

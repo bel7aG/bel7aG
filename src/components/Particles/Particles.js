@@ -3,14 +3,14 @@ import React from 'react';
 const ParticlesOption = {
   particles: {
     number: {
-      value: 37,
+      value: 5,
       density: {
         enable: true,
-        value_area: 880
+        value_area: 929
       }
     },
     color: {
-      value: "#FFF"
+      color: "#fff"
     },
     shape: {
       type: "polygon",
@@ -23,8 +23,8 @@ const ParticlesOption = {
       },
     },
     opacity: {
-      value: 1,
-      random: true,
+      value: 0.1,
+      random: true
     },
     size: {
       value: 1.6,
