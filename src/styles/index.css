@@ -315,6 +315,10 @@ section.about > .letter-box {
   padding: 7.4rem 3.5rem; }
   section.about > .letter-box > .lettering {
     z-index: 111;
+    display: inline;
+    max-width: 47rem;
+    min-width: auto;
+    margin: 0 auto;
     position: relative;
     transform: scale(0.981);
     transition: all .2s;

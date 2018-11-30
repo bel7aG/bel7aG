@@ -13,10 +13,15 @@ section {
 
       > .lettering {
         z-index: 111;
+        display: inline;
+        max-width: 47rem;
+        min-width: auto;
+        margin: 0 auto;
         position: relative;
         transform: scale(.981);
         transition: all .2s;
         padding: 0;
+
 
         > :hover {
           transform: scale(1);
