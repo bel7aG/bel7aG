@@ -13,7 +13,7 @@ const About = () => (
             Complicated huh? You can call me
             <span className="heading-primary-sub__tag"> bel7a<span className="heading-primary-sub__tag-big-g">G</span>
             </span>
-            <span className="heading-primary-sub__symbol"> ` ,`</span>
+            <span className="heading-primary-sub__symbol"> ` <span>~</span>`</span>
           </span>
         </h1>
         <p>

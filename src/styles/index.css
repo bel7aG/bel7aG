@@ -306,12 +306,13 @@ body {
     transform: translate3d(-50%, -10px, 0) rotate(-55deg) scale(1.6) !important; }
 
 section.about > .letter-box {
-  height: 100%;
+  box-sizing: border-box;
+  height: inherit;
   display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  padding: 0 7rem; }
+  padding: 7.4rem 3.5rem; }
   section.about > .letter-box > .lettering {
     z-index: 111;
     position: relative;
@@ -323,7 +324,7 @@ section.about > .letter-box {
       section.about > .letter-box > .lettering > :hover .heading-primary-sub__tag {
         transition: all .2s;
         font-size: 2rem !important;
-        color: #000 !important; }
+        text-shadow: 0 0 1px #000 !important; }
         section.about > .letter-box > .lettering > :hover .heading-primary-sub__tag-big-g {
           transition: all .2s;
           font-size: 2.1rem !important; }
@@ -334,21 +335,30 @@ section.about > .letter-box {
       color: #333; }
     section.about > .letter-box > .lettering > .heading-primary > span:nth-child(2) {
       font-size: 1.4rem;
-      color: #444; }
+      letter-spacing: 2px;
+      color: #959595; }
       section.about > .letter-box > .lettering > .heading-primary > span:nth-child(2) > span:first-child {
         display: block;
-        font-weight: 700;
-        color: #888;
-        font-size: 1.5rem;
+        color: #fff;
+        margin: 1rem 0 .2rem 0;
+        text-shadow: 0 0 4px #000;
+        font-size: 1.67rem;
         transition: all .2s; }
         section.about > .letter-box > .lettering > .heading-primary > span:nth-child(2) > span:first-child > span {
+          font-weight: 700;
           font-size: 1.67rem;
-          color: #666;
+          color: #FFF;
+          margin-left: 1px;
+          text-shadow: 0 0 9px #000;
           transition: all .2s;
           letter-spacing: 1px; }
       section.about > .letter-box > .lettering > .heading-primary > span:nth-child(2) > span:nth-child(2) {
-        color: #000;
-        font-size: 2.3rem; }
+        color: #fff;
+        text-shadow: 1px 0 1px #000;
+        font-size: 3.2rem; }
+        section.about > .letter-box > .lettering > .heading-primary > span:nth-child(2) > span:nth-child(2) > span {
+          font-size: 2.9rem;
+          color: #fed500; }
     section.about > .letter-box > .lettering > p {
       margin: 1rem 0;
       letter-spacing: 1px;
