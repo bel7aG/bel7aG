@@ -13,7 +13,6 @@ html {
 
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
   position: relative;
 }
 
@@ -28,7 +27,7 @@ body, .container, #root {
 }
 
 *, *::before, *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 a {

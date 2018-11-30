@@ -1,0 +1,19 @@
+.portfolio {
+
+  &-box {
+    padding-top: 8rem;
+    min-height: 100%;
+    max-width: 55rem;
+    width: auto;
+    margin: 0 auto;
+
+    .heading-primary {
+      > span:first-child {
+        color: rgb(49, 42, 68);
+        text-transform: capitalize;
+      }
+    }
+
+  }
+
+}

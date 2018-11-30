@@ -67,15 +67,15 @@ class Router extends Component {
         }))
         break
 
-      case 'drawer-button rotate-in rotate-out':
-        this.setState(() => ({
-          handleToggleButtonClassName: 'drawer-button rotate-in rotate-out hover-out'
-        }))
-        break
-
       case 'drawer-button hover-in':
         this.setState(() => ({
           handleToggleButtonClassName: 'drawer-button'
+        }))
+        break
+
+      case 'drawer-button rotate-in rotate-out':
+        this.setState(() => ({
+          handleToggleButtonClassName: 'drawer-button rotate-in rotate-out hover-out'
         }))
         break
 

@@ -9,7 +9,6 @@ html {
 
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
   position: relative; }
 
 body, .container, #root {
@@ -21,7 +20,7 @@ body, .container, #root {
   user-select: none; }
 
 *, *::before, *::after {
-  box-sizing: inherit; }
+  box-sizing: border-box; }
 
 a {
   color: inherit;
@@ -46,6 +45,26 @@ body {
   font-size: 1.5rem;
   background-color: #FFF;
   position: relative; }
+
+.heading-primary > span {
+  display: block; }
+
+.heading-primary > span:first-child {
+  font-size: 2.2rem; }
+
+.heading-primary > span:nth-child(2) {
+  font-size: 1.4rem;
+  letter-spacing: 2px; }
+
+.heading-secondary > span {
+  display: block; }
+
+.heading-secondary > span:first-child {
+  font-size: 1.8rem; }
+
+.heading-secondary > span:nth-child(2) {
+  font-size: 1.67rem;
+  letter-spacing: 2px; }
 
 @keyframes drawer-items {
   from {
@@ -185,10 +204,11 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0 10%; }
+      padding: 0 10%;
+      min-height: 18rem; }
       .toolbar__navigation__list-items > ul > *:not(:last-child) {
         font-size: 2.5rem;
-        border-bottom: 1px solid #DDD;
+        border-bottom: 1px solid #ddeddd;
         transform: translate(0, 0) scale(1) skewY(0) skewX(0);
         transition: all .3s;
         opacity: 0;
@@ -335,11 +355,8 @@ section.about > .letter-box {
     section.about > .letter-box > .lettering > .heading-primary > span {
       display: block; }
     section.about > .letter-box > .lettering > .heading-primary > span:first-child {
-      font-size: 2.2rem;
       color: #333; }
     section.about > .letter-box > .lettering > .heading-primary > span:nth-child(2) {
-      font-size: 1.4rem;
-      letter-spacing: 2px;
       color: #959595; }
       section.about > .letter-box > .lettering > .heading-primary > span:nth-child(2) > span:first-child {
         display: block;
@@ -395,7 +412,7 @@ section.about > .letter-box {
   opacity: 1;
   transition: opacity .4s ease; }
   .container > main:nth-child(2) > section {
-    position: relative;
+    position: relative !important;
     height: 100%;
     width: 100%;
     color: #000;
@@ -413,8 +430,9 @@ section.about > .letter-box {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 0;
   animation: particlesBegin 3.3s ease-out; }
+  .particles-boom {
+    transform: scale(1.6); }
   .particles > canvas {
     z-index: 1;
     position: absolute;
@@ -422,6 +440,16 @@ section.about > .letter-box {
     left: 0;
     height: 100%;
     width: 100%; }
+
+.portfolio-box {
+  padding-top: 8rem;
+  min-height: 100%;
+  max-width: 55rem;
+  width: auto;
+  margin: 0 auto; }
+  .portfolio-box .heading-primary > span:first-child {
+    color: #312a44;
+    text-transform: capitalize; }
 
 .my-image {
   background-color: red; }

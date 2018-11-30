@@ -3,3 +3,34 @@ body {
   background-color: #FFF;
   position: relative;
 }
+
+.heading-primary {
+
+  > span {
+    display: block;
+  }
+
+  > span:first-child {
+    font-size: 2.2rem;
+  }
+
+  > span:nth-child(2) {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+}
+
+.heading-secondary {
+  > span {
+    display: block;
+  }
+
+  > span:first-child {
+    font-size: 1.8rem;
+  }
+
+  > span:nth-child(2) {
+    font-size: 1.67rem;
+    letter-spacing: 2px;
+  }
+}

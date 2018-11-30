@@ -10,7 +10,7 @@
     transition: opacity .4s ease;
 
     > section {
-      position: relative;
+      position: relative !important;
       height: 100%;
       width: 100%;
       color: #000;

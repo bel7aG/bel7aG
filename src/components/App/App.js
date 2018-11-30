@@ -1,6 +1,6 @@
 import React from 'react';
-import Particles from 'react-particles-js';
 import { Router } from '..';
+import Particles from 'react-particles-js';
 import { ParticlesOption } from '..';
 
 const pages = [

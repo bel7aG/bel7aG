@@ -7,7 +7,9 @@ const Drawer = ({ pages, navClass, click }) => {
         <div className="toolbar__navigation__list-items">
           <ul>
             {pages.map(({ title, url }) => (
-              <NavLink to={url} onClick={click} key={title}>{title}</NavLink>
+              <li key={title}>
+                <NavLink to={url} onClick={click}>{title}</NavLink>
+              </li>
             ))}
             <li>
               <a href="https://github.com/bel7aG" target="_blank">https://github.com/bel7aG</a>
