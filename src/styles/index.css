@@ -291,11 +291,11 @@ body {
     transform: translate3d(-50%, -50%, 0) scale(1);
     transition: transform 0.45s cubic-bezier(0.43, 1.77, 0.15, 1.5); }
     .drawer-button__line:first-child {
-      top: 13px; }
+      top: 11px; }
     .drawer-button__line:nth-child(2) {
       top: 50%; }
     .drawer-button__line:last-child {
-      bottom: 13px;
+      bottom: 11px;
       transform: translate3d(-50%, 50%, 0) rotate(0); }
   .drawer-button.hover-in .drawer-button__line {
     transform: translate3d(-50%, -50%, 0) scale(1.08);
@@ -328,8 +328,7 @@ body {
     transform: translate3d(-50%, -10px, 0) rotate(-55deg) scale(1.6) !important; }
 
 section.about .letter-box {
-  box-sizing: border-box;
-  height: inherit;
+  height: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -404,7 +403,7 @@ section.about .letter-box {
     width: 100%;
     height: 100%; }
 
-.container > main:nth-child(2) {
+.container > main {
   position: relative;
   top: 0;
   left: 0;
@@ -413,16 +412,16 @@ section.about .letter-box {
   color: #000;
   opacity: 1;
   transition: opacity .4s ease; }
-  .container > main:nth-child(2) > section {
+  .container > main > section {
     position: relative !important;
     height: 100%;
     width: 100%;
     color: #000;
     opacity: 1;
     transition: transform .4s ease-out; }
-  .container > main:nth-child(2).hidden {
+  .container > main.hidden {
     opacity: 0; }
-    .container > main:nth-child(2).hidden > * {
+    .container > main.hidden > * {
       transform: scale(0.92); }
 
 .particles {
@@ -443,18 +442,37 @@ section.about .letter-box {
     height: 100%;
     width: 100%; }
 
-.portfolio-box {
-  padding-top: 8rem;
+.wrapper .portfolio-box {
   min-height: 100%;
   max-width: 80%;
   width: auto;
   margin: 0 auto;
-  text-align: center; }
-  .portfolio-box .heading-primary > span:first-child {
-    color: #312a44;
-    text-transform: uppercase; }
-  .portfolio-box > .sub-app:last-child {
-    margin-top: 2rem; }
+  z-index: 1; }
+  .wrapper .portfolio-box .heading-primary {
+    padding-top: 1.7rem; }
+    .wrapper .portfolio-box .heading-primary > span:first-child {
+      position: relative;
+      z-index: 111;
+      margin: auto;
+      display: inline-block;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0 0 5.3px #000;
+      transform: skewY(1.6deg);
+      transition: all .2s; }
+      .wrapper .portfolio-box .heading-primary > span:first-child:hover {
+        transform: skewY(0); }
+  .wrapper .portfolio-box .heading-secondary {
+    padding-top: 2rem; }
+    .wrapper .portfolio-box .heading-secondary-main {
+      color: #444; }
+    .wrapper .portfolio-box .heading-secondary-sub {
+      color: #666; }
+
+.wrapper > .sub-app {
+  margin-top: 2rem; }
 
 .my-image {
   background-color: red; }

@@ -3,8 +3,7 @@ section {
   &.about {
 
     .letter-box {
-      box-sizing: border-box;
-      height: inherit;
+      height: 100%;
       display: flex;
       justify-content: center;
       text-align: center;

@@ -19,8 +19,8 @@ const Portfolio = (props) => (
             Check out my latest web software development portfolio projects.
           </span>
         </h2>
-        <SubApps />
       </div>
+      <SubApps />
     </div>
   </section>
 )

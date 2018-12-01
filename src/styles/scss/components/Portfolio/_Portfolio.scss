@@ -1,25 +1,50 @@
-.portfolio {
+.wrapper {
+  .portfolio {
 
-  &-box {
-    padding-top: 8rem;
-    min-height: 100%;
-    max-width: 80%;
-    width: auto;
-    margin: 0 auto;
-    text-align: center;
+    &-box {
+      min-height: 100%;
+      max-width: 80%;
+      width: auto;
+      margin: 0 auto;
+      z-index: 1;
 
-    .heading-primary {
-      > span:first-child {
-        color: rgb(49, 42, 68);
-        text-transform: uppercase;
+      .heading {
+        &-primary {
+          padding-top: 1.7rem;
+          > span:first-child {
+            position: relative;
+            z-index: 111;
+            margin: auto;
+            display: inline-block;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 0 5.3px #000;
+            transform: skewY(1.6deg);
+            transition: all .2s;
+
+            &:hover {
+              transform: skewY(0);
+            }
+          }
+        }
+
+        &-secondary {
+          padding-top: 2rem;
+          &-main {
+            color: #444;
+          }
+          &-sub {
+            color: #666;
+          }
+        }
       }
-    }
-
-    > .sub-app:last-child {
-      margin-top: 2rem;
 
     }
-
   }
 
+  > .sub-app {
+    margin-top: 2rem;
+  }
 }
