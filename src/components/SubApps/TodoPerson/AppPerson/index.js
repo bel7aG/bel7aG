@@ -1,3 +1,3 @@
-import AppPerson from 'AppPerson'
+import AppPerson from './AppPerson'
 
 export default AppPerson

@@ -111,7 +111,7 @@ class Router extends Component {
               <Route component={NotFound} />
             </Switch>
           </Main>
-          <TurnAround />
+          {/* <TurnAround /> */}
         </React.Fragment>
       </BrowserRouter>
     )

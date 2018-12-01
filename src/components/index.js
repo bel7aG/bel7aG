@@ -3,8 +3,9 @@ import Router from './Router'
 import Header from './Header'
 import Main from './Main'
 import About from './About'
-import Portfolio from './Portfolio'
 import Contact from './Contact'
+import Portfolio from './Portfolio'
+import SubApps from './SubApps'
 import FollowMe from './FollowMe'
 import MyPicture from './MyPicture'
 import NotFound from './NotFound'
@@ -13,12 +14,13 @@ import ParticlesOption from './Particles'
 import TurnAround from './TurnAround'
 
 export {
-  App,
+  App as default,
   Router,
   Header,
   Main,
   About,
   Portfolio,
+  SubApps,
   Drawer,
   DrawerToggleButton,
   SideDrawer,

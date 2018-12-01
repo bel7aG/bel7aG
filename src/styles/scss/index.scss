@@ -16,12 +16,10 @@
 @import "components/Main";
 @import "components/NotFound";
 @import "components/Particles";
-@import "components/Portfolio";
+@import "components/Portfolio/Portfolio";
 @import "components/MyPicture";
 @import "components/TurnAround";
 
 
 //layout
-@import "layout/grid";
-@import "layout/grid-playground";
-@import "layout/gridChallangeOne";
+@import "layout/wrapper";

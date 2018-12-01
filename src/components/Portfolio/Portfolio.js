@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
+import { SubApps } from '../'
 
-const Portfolio = (props) => {
-  console.log(props);
-  return (
-    <section className="portfolio">
+const Portfolio = (props) => (
+  <section className="portfolio">
+    <div className="wrapper">
       <div className="portfolio-box">
         <h1 className="heading-primary">
           <span className="heading-primary-main">
@@ -11,13 +11,18 @@ const Portfolio = (props) => {
           </span>
         </h1>
         <h2 className="heading-secondary">
-          From Web Components and UI/UX animations to React.JS, Redux,
-          Node.JS, and css(sass/scss).
-          Check out my latest web software development portfolio projects.
+          <span className="heading-secondary-main">
+            From Web Components and UI/UX animations to React.JS, Redux,
+            Node.JS, and css(sass/scss).
+          </span>
+          <span className="heading-secondary-main">
+            Check out my latest web software development portfolio projects.
+          </span>
         </h2>
+        <SubApps />
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+)
 
-export default Portfolio;
+export default Portfolio

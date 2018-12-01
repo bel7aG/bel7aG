@@ -1,3 +1,3 @@
-import SubApp from './SubApp()'
+import SubApps from './SubApps'
 
-export default SubApp
+export default SubApps

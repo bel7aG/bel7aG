@@ -23,14 +23,16 @@ body {
 .heading-secondary {
   > span {
     display: block;
+    margin: 1rem 0;
   }
 
   > span:first-child {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   > span:nth-child(2) {
     font-size: 1.67rem;
     letter-spacing: 2px;
   }
+  
 }
