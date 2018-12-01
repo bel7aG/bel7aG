@@ -65,8 +65,7 @@ body {
   font-size: 1.6rem; }
 
 .heading-secondary > span:nth-child(2) {
-  font-size: 1.67rem;
-  letter-spacing: 2px; }
+  font-size: 1.67rem; }
 
 @keyframes drawer-items {
   from {
@@ -451,6 +450,7 @@ section.about .letter-box {
   .wrapper .portfolio-box .heading-primary {
     padding-top: 1.7rem; }
     .wrapper .portfolio-box .heading-primary > span:first-child {
+      font-family: sans-serif;
       position: relative;
       z-index: 111;
       margin: auto;
@@ -459,17 +459,25 @@ section.about .letter-box {
       letter-spacing: 2px;
       color: #fff;
       text-transform: uppercase;
-      text-shadow: 0 0 5.3px #000;
-      transform: skewY(1.6deg);
+      text-shadow: 0 0 2.3px #000;
+      transform: skewY(1.3deg);
       transition: all .2s; }
       .wrapper .portfolio-box .heading-primary > span:first-child:hover {
-        transform: skewY(0); }
+        transform: skewY(0);
+        text-shadow: 0 0 4.3px #000; }
   .wrapper .portfolio-box .heading-secondary {
-    padding-top: 2rem; }
+    text-align: center;
+    padding-top: 4rem; }
     .wrapper .portfolio-box .heading-secondary-main {
-      color: #444; }
+      color: #333;
+      margin-bottom: 2.8rem; }
     .wrapper .portfolio-box .heading-secondary-sub {
-      color: #666; }
+      color: #555;
+      margin-bottom: 4.7rem;
+      text-align: center; }
+  .wrapper .portfolio-box p {
+    transform: skewY(1.41deg);
+    text-align: right; }
 
 .wrapper > .sub-app {
   margin-top: 2rem; }

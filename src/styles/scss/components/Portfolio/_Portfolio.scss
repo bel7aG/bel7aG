@@ -7,11 +7,12 @@
       width: auto;
       margin: 0 auto;
       z-index: 1;
-
       .heading {
         &-primary {
           padding-top: 1.7rem;
+
           > span:first-child {
+            font-family: sans-serif;
             position: relative;
             z-index: 111;
             margin: auto;
@@ -20,25 +21,34 @@
             letter-spacing: 2px;
             color: #fff;
             text-transform: uppercase;
-            text-shadow: 0 0 5.3px #000;
-            transform: skewY(1.6deg);
+            text-shadow: 0 0 2.3px #000;
+            transform: skewY(1.3deg);
             transition: all .2s;
 
             &:hover {
               transform: skewY(0);
+              text-shadow: 0 0 4.3px #000;
             }
           }
         }
 
         &-secondary {
-          padding-top: 2rem;
+          text-align: center;
+          padding-top: 4rem;
           &-main {
-            color: #444;
+            color: #333;
+            margin-bottom: 2.8rem;
           }
           &-sub {
-            color: #666;
+            color: #555;
+            margin-bottom: 4.7rem;
+            text-align: center;
           }
         }
+      }
+      p {
+        transform: skewY(1.41deg);
+        text-align: right;
       }
 
     }

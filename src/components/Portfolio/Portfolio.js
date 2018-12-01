@@ -15,7 +15,7 @@ const Portfolio = (props) => (
             From Web Components and UI/UX animations to React.JS, Redux,
             Node.JS, and css(sass/scss).
           </span>
-          <span className="heading-secondary-main">
+          <span className="heading-secondary-sub">
             Check out my latest web software development portfolio projects.
           </span>
         </h2>
