@@ -10,6 +10,7 @@ import MyPicture from './MyPicture'
 import NotFound from './NotFound'
 import { Drawer, DrawerToggleButton, SideDrawer, Wire } from './Drawer'
 import ParticlesOption from './Particles'
+import TurnAround from './TurnAround'
 
 export {
   App,
@@ -26,5 +27,6 @@ export {
   FollowMe,
   MyPicture,
   NotFound,
-  ParticlesOption
+  ParticlesOption,
+  TurnAround
 }

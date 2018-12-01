@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Header, Main, About, Portfolio, Contact, NotFound } from '../'
+import { Header, Main, About, Portfolio, Contact, NotFound, TurnAround } from '../'
 
 class Router extends Component {
   state = {
@@ -111,6 +111,7 @@ class Router extends Component {
               <Route component={NotFound} />
             </Switch>
           </Main>
+          <TurnAround />
         </React.Fragment>
       </BrowserRouter>
     )

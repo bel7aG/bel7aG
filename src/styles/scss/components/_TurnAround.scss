@@ -1,0 +1,16 @@
+.turnaround {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+
+  .big-one {
+    height: 20rem;
+    width: 20rem;
+    background-color: #333;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    bottom: calc(100vh - 10rem);
+  }
+}

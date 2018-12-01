@@ -9,6 +9,7 @@ html {
 
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative; }
 
 body, .container, #root {
@@ -453,6 +454,20 @@ section.about > .letter-box {
 
 .my-image {
   background-color: red; }
+
+.turnaround {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh; }
+  .turnaround .big-one {
+    height: 20rem;
+    width: 20rem;
+    background-color: #333;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    bottom: calc(100vh - 10rem); }
 
 .grid h1 {
   text-align: center;
